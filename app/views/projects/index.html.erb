@@ -1,26 +1,23 @@
 <div class="pj-list">
-    <% @projects.each do |pj| %>
-      <%= link_to project_path(pj.id) do %>
-        <div class="pj-card">
-          <div class="pj-card-title">
-            <h3><%= pj.title %></h3>
-          </div>
-          <div class="pj-card-create">
-            <p><%= pj.created_at %></p>
-          </div>
+  <% @projects.each do |pj| %>
+    <%= link_to project_path(pj.id) do %>
+      <div class="pj-card">
+        <div class="pj-card-title">
+          <h3><%= pj.title %></h3>
         </div>
-      <% end %>
+        <div class="pj-card-create">
+          <p><%= pj.created_at %></p>
+        </div>
+      </div>
     <% end %>
+  <% end %>
 </div>
-
-    <div class="button-new-project">
-      <p id="new-project">New Project</p>
-      <%= simple_form_for @project, remote: true do |f| %>
-        <div id="form-project" class="containeur-form-project">
-          <%= f.input :title, label: "Project's title:", error: 'Title is mandatory, enter one please' %>
-          <%= f.button :submit, "Create", class: "btn-create btn btn-success px-5" %>
-        </div>
-      <% end %>
+<div class="button-new-project">
+  <p id="new-project">New Project</p>
+  <%= simple_form_for @project, remote: true do |f| %>
+    <div id="form-project" class="containeur-form-project">
+      <%= f.input :title, label: "Project's title:", error: 'Title is mandatory, enter one please' %>
+      <%= f.button :submit, "Create", class: "btn-create btn btn-success px-5" %>
     </div>
-  </div>
+  <% end %>
 </div>

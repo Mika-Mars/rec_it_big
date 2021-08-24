@@ -17,8 +17,8 @@
 
 .pj-card {
   height: 85px;
-  width: 85%;
-  margin: 8px;
+  max-width: 350px;
+  margin: 8px auto;
   background: rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 4px rgba(83, 34, 59, 0.836);
   border: ridge;
@@ -29,9 +29,8 @@
 
 .pj-card-title {
   font-size: x-small;
-  padding-left: 8px;
+  padding: 4px;
   margin: 0px;
-
 }
 
 .pj-card-title h3{
