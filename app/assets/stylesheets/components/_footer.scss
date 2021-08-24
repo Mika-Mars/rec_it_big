@@ -4,20 +4,20 @@
   align-items: center;
   justify-content: space-between;
   height: 100px;
-  padding: 0px 50px;
+  padding: 10px 10px;
   color: rgba(0,0,0,0.3);
   bottom: 0;
-  position: absolute;
+  position: fixed;
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 #footerDropdown {
-  width: 100px;
+  width: 70px;
 }
 #footerbtn {
-  width: 100px;
+  width: 120px;
 }
 #footeraddbtn {
-  width: 100px;
+  width: 70px;
 }
