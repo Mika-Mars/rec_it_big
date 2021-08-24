@@ -7,6 +7,7 @@ class ProjectsController < ApplicationController
   end
 
   def index
+    @disable_nav = true
     @projects = Project.all
     @project = Project.new
   end
