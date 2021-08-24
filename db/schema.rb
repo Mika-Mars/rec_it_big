@@ -10,18 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_23_155542) do
+ActiveRecord::Schema.define(version: 2021_08_23_153904) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "notes", force: :cascade do |t|
-    t.text "content"
-    t.bigint "project_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["project_id"], name: "index_notes_on_project_id"
-  end
 
   create_table "projects", force: :cascade do |t|
     t.string "title"
@@ -29,14 +21,6 @@ ActiveRecord::Schema.define(version: 2021_08_23_155542) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_projects_on_user_id"
-  end
-
-  create_table "texts", force: :cascade do |t|
-    t.text "content"
-    t.bigint "project_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["project_id"], name: "index_texts_on_project_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -60,8 +44,6 @@ ActiveRecord::Schema.define(version: 2021_08_23_155542) do
     t.index ["project_id"], name: "index_voice_records_on_project_id"
   end
 
-  add_foreign_key "notes", "projects"
   add_foreign_key "projects", "users"
-  add_foreign_key "texts", "projects"
   add_foreign_key "voice_records", "projects"
 end
