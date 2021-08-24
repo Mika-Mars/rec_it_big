@@ -12,7 +12,7 @@ User.create(email: 'lildev@gmail.com', password: "123456")
 Project.destroy_all
 5.times do
     project = Project.new(
-      title: Faker::Cannabis.name,
+      title: Faker::Cannabis.cannabinoid,
       user_id: 1,
     )
     project.save!

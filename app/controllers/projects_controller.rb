@@ -1,4 +1,11 @@
 class ProjectsController < ApplicationController
+    before_action :set_project, only: [:show]
+
+  def show
+        @voice_record = VoiceRecord.new
+        @note = Note.new
+  end
+  
   def index
     @projects = Project.all
   end
@@ -10,11 +17,16 @@ class ProjectsController < ApplicationController
       redirect_to projects_path
     else
       render projects_path
-    end
+  end
 
- private
+  private
+    
+  def set_project
+    @project = Project.find(params[:id])
+  end
 
   def project_params
     params.require(:project).permit(:title)
   end
 end
+
