@@ -10,9 +10,14 @@
   position: absolute;
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 #footerDropdown {
   width: 100px;
-
+}
+#footerbtn {
+  width: 100px;
+}
+#footeraddbtn {
+  width: 100px;
 }
