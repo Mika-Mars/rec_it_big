@@ -10,6 +10,27 @@ require 'faker'
 User.create(email: 'lildev@gmail.com', password: "123456")
 
 Project.destroy_all
+
+Project.create(
+  title: "Skusku Project",
+  user_id: 1
+)
+
+Project.create(
+  title: "Dans mon bendo",
+  user_id: 1
+)
+
+Project.create(
+  title: "Project Blue Beam",
+  user_id: 1
+)
+
+Project.create(
+  title: "Mélancolique",
+  user_id: 1
+)
+
 5.times do
     project = Project.new(
       title: Faker::Cannabis.cannabinoid,

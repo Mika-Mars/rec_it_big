@@ -1,5 +1,10 @@
 body {
-  background-image: url("https://i.ibb.co/rkyLmHj/Wallpaper-Dog-10791689.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.9),
+                  rgba(102, 9, 71, 0.9)),
+                    url("https://i.ibb.co/BZBqVTY/background-biggy.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
   color: white;
 }
 
@@ -10,12 +15,34 @@ body {
 }
 
 .pj-card {
-  height: 50px;
-  background: rgb(80, 80, 80);
+  height: 85px;
+  width: 85%;
+  margin: 8px;
+  background: rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 4px rgba(83, 34, 59, 0.836);
-  border: 1px;
-  border-color: white;
-  width: 60%;
-  margin: 16px;
+  border: ridge;
+  border-width: 4px;
+  border-color: rgba(138, 34, 120, 0.5);
   border-radius: 8px;
+}
+
+.pj-card-title {
+  font-size: x-small;
+  padding-left: 8px;
+  margin: 0px;
+
+}
+
+.pj-card-title h3{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.pj-card-create {
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+  padding-top: 4px;
 }
