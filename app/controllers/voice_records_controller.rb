@@ -1,0 +1,2 @@
+class VoiceRecordsController < ApplicationController
+end
