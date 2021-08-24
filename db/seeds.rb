@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
+User.create(email: 'lildev@gmail.com', password: "123456")
+
+Project.destroy_all
+5.times do
+    project = Project.new(
+      title: Faker::Cannabis.name,
+      user_id: 1,
+    )
+    project.save!
+  end
+
+  count = Project.count
+  p "#{count} project have been created"

@@ -1,4 +1,8 @@
 class ProjectsController < ApplicationController
+  def index
+    @projects = Project.all
+  end
+
   def create
     @project = Project.new(project_params)
     @projet.user_id = current_user.id
@@ -7,9 +11,8 @@ class ProjectsController < ApplicationController
     else
       render projects_path
     end
-  end
 
-  private
+ private
 
   def project_params
     params.require(:project).permit(:title)
