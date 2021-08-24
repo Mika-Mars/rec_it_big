@@ -1,4 +1,11 @@
 class ProjectsController < ApplicationController
+    before_action :set_project, only: [:show]
+
+  def show
+        @voice_record = VoiceRecord.new
+        @note = Note.new
+  end
+  
   def index
     @projects = Project.all
     @project = Project.new
@@ -16,7 +23,12 @@ class ProjectsController < ApplicationController
 
   private
 
+  def set_project
+    @project = Project.find(params[:id])
+  end
+
   def project_params
     params.require(:project).permit(:title)
   end
 end
+
