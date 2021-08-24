@@ -1,1 +1,81 @@
 // Specific CSS for your home-page
+section{
+    height: 80vh;
+    padding: 40px 0;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    color: white;
+}
+label{
+    font-weight: 800;
+    font-size: 1.5rem;
+    text-shadow: 5px 5px 20px  rgb(135, 220, 191) ;
+}
+input.user{
+    border: 0;
+    border-radius: 16px;
+    width: 60%;
+    height: 45px;
+    background: linear-gradient( rgba(16, 5, 61, 0.9), rgba(0, 0, 0, 0.6));
+    box-shadow: 10px 10px 30px rgba(255, 251, 251, 0.1);
+}
+.password{
+    width: 100%;
+    text-align: center;
+}
+.password p{
+    text-align: left;
+    font-size: .7rem;
+    padding: 8px 0 0 24%;
+    text-shadow: 3px 3px 20px  rgb(135, 220, 191);
+}
+::placeholder{
+    text-align: center;
+    text-shadow: 3px 3px 20px  rgb(22, 137, 204);
+    font-size: .9rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+button {
+    width: 178px;
+    height: 58px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid rgb(135, 220, 191);
+    outline: none;
+    transition: 1s ease-in-out;
+    position: relative;
+}
+svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    fill: none;
+    stroke: white;
+    stroke-dasharray: 150 480;
+    stroke-dashoffset: 150;
+    transition: 2s ease-in-out;
+}
+button:hover {
+    transition: 1s ease-in-out;
+    background: rgb(135, 220, 191);
+}
+button:hover svg {
+    stroke-dashoffset: -480;
+  }
+  button span {
+    color: white;
+    font-size: 18px;
+    font-weight: 100;
+  }
+  a{
+      text-align: left;
+      padding-left: 40px;
+      color: white;
+      font-size: 12px;
+      text-shadow: 5px 5px 20px  rgb(135, 220, 191) ;
+  }
