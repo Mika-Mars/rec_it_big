@@ -2,6 +2,7 @@
   <%= simple_form_for @project do |f| %>
     <%= f.input :title, label: "Project's title:", error: 'Title is mandatory, enter one please' %>
     <%= f.button :submit, "Create", class: "btn btn-success mt-3 px-5" %>
+  <% end %>
 </div>
 
 <div class="pj-list">
@@ -10,5 +11,5 @@
       <ul>
         <li><%= pj.title %></li>
       </ul>
-     </div>
+    </div>
   <% end %>
