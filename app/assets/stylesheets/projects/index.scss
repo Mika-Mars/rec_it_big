@@ -5,8 +5,17 @@ body {
 
 .pj-list {
   display: flex;
-  align-items: co;
+  align-items: center;
+  flex-direction: column;
 }
 
 .pj-card {
+  height: 50px;
+  background: rgb(80, 80, 80);
+  box-shadow: 0 0 4px rgba(83, 34, 59, 0.836);
+  border: 1px;
+  border-color: white;
+  width: 60%;
+  margin: 16px;
+  border-radius: 8px;
 }
