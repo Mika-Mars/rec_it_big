@@ -5,8 +5,9 @@ class ProjectsController < ApplicationController
         @voice_record = VoiceRecord.new
         @note = Note.new
   end
-  
+
   def index
+    @disable_nav = true
     @projects = Project.all
     @project = Project.new
   end
@@ -31,4 +32,3 @@ class ProjectsController < ApplicationController
     params.require(:project).permit(:title)
   end
 end
-
