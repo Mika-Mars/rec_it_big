@@ -1,9 +1,9 @@
 class ProjectsController < ApplicationController
-    before_action :set_project, only: [:show]
+  before_action :set_project, only: [:show]
 
   def show
-        @voice_record = VoiceRecord.new
-        @note = Note.new
+    @voice_record = VoiceRecord.new
+    @note = Note.new
   end
 
   def index
