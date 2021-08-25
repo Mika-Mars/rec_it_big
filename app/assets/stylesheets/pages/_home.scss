@@ -34,44 +34,6 @@ input.user{
     padding: 8px 0 0 24%;
     text-shadow: 3px 3px 20px  rgb(135, 220, 191);
 }
-::placeholder{
-    text-align: center;
-    text-shadow: 3px 3px 20px  rgb(22, 137, 204);
-    font-size: .9rem;
-    color: rgba(255, 255, 255, 0.5);
-}
-button {
-    width: 178px;
-    height: 58px;
-    cursor: pointer;
-    background: transparent;
-    border: 1px solid rgb(135, 220, 191);
-    outline: none;
-    transition: 1s ease-in-out;
-    position: relative;
-}
-svg {
-    position: absolute;
-    left: 0;
-    top: 0;
-    fill: none;
-    stroke: white;
-    stroke-dasharray: 150 480;
-    stroke-dashoffset: 150;
-    transition: 2s ease-in-out;
-}
-button:hover {
-    transition: 1s ease-in-out;
-    background: rgb(135, 220, 191);
-}
-button:hover svg {
-    stroke-dashoffset: -480;
-  }
-  button span {
-    color: white;
-    font-size: 18px;
-    font-weight: 100;
-  }
 
 .home-btn {
   text-align: left;
