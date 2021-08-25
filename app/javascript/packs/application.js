@@ -33,8 +33,5 @@ import { getAudio } from '../components/get_audio';
 document.addEventListener('turbolinks:load', () => {
   addNewProject();
   addNewSong();
-});
-
-document.addEventListener('turbolinks:load', () => {
   getAudio();
 });
