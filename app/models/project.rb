@@ -3,5 +3,5 @@ class Project < ApplicationRecord
   has_many :voice_records
   has_one :note
 
-  validates :title, presence: true, uniqueness: true
+  validates :title, presence: true
 end
