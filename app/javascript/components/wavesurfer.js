@@ -15,3 +15,4 @@ const initWavesurfer = () => {
 }
 
 export { initWavesurfer}
+

@@ -8,4 +8,6 @@ const addNewSong = () => {
   }
 }
 
-export { addNewSong };
+export {
+  addNewSong
+};
