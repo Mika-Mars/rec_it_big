@@ -63,5 +63,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 
-# cloudinary
+# dotenv protection file
 gem 'dotenv-rails', groups: [:development, :test]
+# cloudinary
+gem 'cloudinary', '~> 1.16.0'

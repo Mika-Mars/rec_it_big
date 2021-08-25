@@ -4,6 +4,7 @@ class ProjectsController < ApplicationController
   def show
     @voice_record = VoiceRecord.new
     @note = Note.new
+
   end
 
   def index
@@ -22,6 +23,11 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def update
+    @project = Project.find(params[:id])
+    @project.update(project_params)
+  end
+
   private
 
   def set_project
@@ -29,6 +35,6 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:title)
+    params.require(:project).permit(:title, :song)
   end
 end

@@ -25,9 +25,10 @@ require("channels")
 // External imports
 import "bootstrap";
 import { addNewProject } from '../components/add_button';
-
+import { addNewSong } from '../components/modal';
 
 
 document.addEventListener('turbolinks:load', () => {
   addNewProject();
+  addNewSong();
 });
