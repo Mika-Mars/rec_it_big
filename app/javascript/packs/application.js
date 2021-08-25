@@ -27,6 +27,7 @@ import "bootstrap";
 import "@fortawesome/fontawesome-free/js/all";
 import { addNewProject } from '../components/add_button';
 import { getAudio } from '../components/get_audio';
+import WaveSurfer from '../components/wavesurfer.js';
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -36,3 +37,4 @@ document.addEventListener('turbolinks:load', () => {
 document.addEventListener('turbolinks:load', () => {
   getAudio();
 });
+
