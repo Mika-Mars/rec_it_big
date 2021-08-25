@@ -1,17 +1,16 @@
 .button-new-project {
   position: fixed;
-  right: 20px;
-  bottom: 30px;
-    p {
-      background-color: blueviolet;
-      padding: 4px 8px;
-      cursor: pointer;
-      position: relative;
-    }
+  right: 70px;
+  bottom: 70px;
+}
+
+.fa-plus-circle {
+  color: antiquewhite;
+  font-size: 50px;
 }
 
 .containeur-form-project {
-  display: none;
+  display: flex;
   position: absolute;
   flex-direction: column;
   justify-content: center;
@@ -19,10 +18,11 @@
   width: 300px;
   height: 200px;
   padding: 8px;
-  bottom: 45px;
-  right: 108px;
+  bottom: 0px;
+  right: -400px;
   background-color: rgba(0, 0, 0, 0.918);
   border-radius: 4px;
+  transition: all 0.6s ease;
 }
 
 .btn-create {
