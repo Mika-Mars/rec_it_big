@@ -2,17 +2,17 @@
   <% if user_signed_in? %>
     <div class="logged-btn">
       <%= link_to projects_path, class: "index-btn" do %>
-        <p>My projects</p>
+        <h3>My projects</h3>
       <% end %>
       <%= link_to projects_path, class: "index-btn" do %>
-        <p>Another btn</p>
+        <h3>Another btn</h3>
       <% end %>
     </div>
-    <div>
+    <div class="sign-out">
       <%= link_to destroy_user_session_path, method: :delete do %>
-        <i class="fas fa-power-off"><p>Sign out</p></i>
+        <i class="fas fa-power-off"></i><h2>Sign out</h2>
       <% end %>
-    <div>
+    </div>
   <% else %>
     <section>
       <home-form action="sign in">
