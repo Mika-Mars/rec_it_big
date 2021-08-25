@@ -32,8 +32,8 @@ import WaveSurfer from '../components/wavesurfer.js';
 
 
 document.addEventListener('turbolinks:load', () => {
-  addNewProject();
   addNewSong();
+  addNewProject();
   getAudio();
 });
 
