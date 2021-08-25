@@ -1,19 +1,19 @@
 <div class="biggy-container">
   <div class="pj-list">
-      <% @projects.each do |pj| %>
-        <%= link_to project_path(pj.id), class: "pj-card" do %>
-          <div class="pj-card-title">
-            <h3><%= pj.title %></h3>
-          </div>
-          <div class="pj-card-create">
-            <p><%= pj.created_at %></p>
-          </div>
-        <% end %>
+    <% @projects.each do |pj| %>
+      <%= link_to project_path(pj.id), class: "pj-card" do %>
+        <div class="pj-card-title">
+          <h3><%= pj.title %></h3>
+        </div>
+        <div class="pj-card-create">
+          <p><%= pj.created_at %></p>
+        </div>
       <% end %>
+    <% end %>
   </div>
 </div>
 <div class="button-new-project">
-<div id="new-project"><%= icon('fas', 'plus-circle')%></div>
+  <div id="new-project"><%= icon('fas', 'plus-circle')%></div>
   <%= simple_form_for @project, remote: true do |f| %>
     <div id="form-project" class="containeur-form-project">
       <%= f.input :title, label: "Project's title:", error: 'Title is mandatory, enter one please' %>

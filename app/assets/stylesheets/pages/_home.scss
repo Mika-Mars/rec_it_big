@@ -3,7 +3,7 @@ section{
     height: 80vh;
     padding: 40px 0;
 }
-form{
+home-form{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -72,10 +72,11 @@ button:hover svg {
     font-size: 18px;
     font-weight: 100;
   }
-  a{
-      text-align: left;
-      padding-left: 40px;
-      color: white;
-      font-size: 12px;
-      text-shadow: 5px 5px 20px  rgb(135, 220, 191) ;
-  }
+
+.home-btn {
+  text-align: left;
+  padding-left: 40px;
+  color: white;
+  font-size: 12px;
+  text-shadow: 5px 5px 20px  rgb(135, 220, 191) ;
+}
