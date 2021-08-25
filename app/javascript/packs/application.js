@@ -24,6 +24,7 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import "@fortawesome/fontawesome-free/js/all";
 import { addNewProject } from '../components/add_button';
 
 

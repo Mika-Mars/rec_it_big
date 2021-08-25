@@ -3,10 +3,10 @@ const addNewProject = () => {
   const formContaineur = document.querySelector('#form-project');
 
   button.addEventListener('click', () => {
-    if( window.getComputedStyle( formContaineur ).right === "-350px" ) {
-        formContaineur.style.right = "108px";
+    if( window.getComputedStyle( formContaineur ).right === "-400px" ) {
+        formContaineur.style.right = "-20px";
     } else {
-        formContaineur.style.right = "-350px";
+        formContaineur.style.right = "-400px";
     }
   });
 }

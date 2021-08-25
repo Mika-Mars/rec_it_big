@@ -101,6 +101,9 @@ GEM
     ffi (1.15.3)
     font-awesome-sass (5.15.1)
       sassc (>= 1.11)
+    font_awesome5_rails (1.5.0)
+      nokogiri (>= 1.11.3)
+      railties (>= 4.2)
     globalid (0.5.2)
       activesupport (>= 5.0)
     i18n (1.8.10)
@@ -250,6 +253,7 @@ DEPENDENCIES
   dotenv-rails
   faker!
   font-awesome-sass
+  font_awesome5_rails
   jbuilder (~> 2.7)
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)
