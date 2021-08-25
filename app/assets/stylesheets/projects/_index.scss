@@ -25,13 +25,16 @@
   border-width: 4px;
   border-color: rgba(138, 34, 120, 0.5);
   border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  text-shadow: 0px 1px 4px white;
 }
 
 .pj-card-title {
   font-size: x-small;
   padding-left: 8px;
   margin: 0px;
-
 }
 
 .pj-card-title h3{
@@ -46,4 +49,11 @@
   justify-content: center;
   margin: 0px;
   padding-top: 4px;
+}
+
+.fa-arrow-left {
+  color: white;
+  text-shadow: 0px 1px 4px white;
+  font-size: 30px;
+  margin: 16px 0 12px 16px;
 }

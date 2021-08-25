@@ -4,19 +4,20 @@
     <title>RecItBig</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://kit.fontawesome.com/85059209e5.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <script src="https://kit.fontawesome.com/4272c9ce50.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-
     <%= yield %>
     <%= render 'shared/footer' unless @disable_nav %>
   </body>
