@@ -36,4 +36,3 @@ document.addEventListener('turbolinks:load', () => {
   addNewProject();
   getAudio();
 });
-
