@@ -7,12 +7,16 @@
       <div>
         <%= @project.title %>
       </div>
+
       <div>
         <%= simple_form_for(@project) do |f| %>
           <%= f.input :song, as: :file %>
           <%= f.submit %>
         <% end %>
       </div>
+      <% if @project.song.attached? %>
+        <%= cl_video_tag @project.song.key,:source_types => [:mp3],:controls => true,:poster => false %>
+      <%end%>
     </div>
 
     <div class="project_body">
