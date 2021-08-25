@@ -26,9 +26,13 @@ require("channels")
 import "bootstrap";
 import "@fortawesome/fontawesome-free/js/all";
 import { addNewProject } from '../components/add_button';
-
+import { getAudio } from '../components/get_audio';
 
 
 document.addEventListener('turbolinks:load', () => {
   addNewProject();
+});
+
+document.addEventListener('turbolinks:load', () => {
+  getAudio();
 });
