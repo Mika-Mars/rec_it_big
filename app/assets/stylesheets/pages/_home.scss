@@ -80,3 +80,51 @@ button:hover svg {
   font-size: 12px;
   text-shadow: 5px 5px 20px  rgb(135, 220, 191) ;
 }
+
+.logged-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+}
+
+.index-btn {
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 4px rgba(83, 34, 59, 0.836);
+  border: ridge;
+  border-width: 4px;
+  border-color: rgba(138, 34, 120, 0.5);
+  border-radius: 8px;
+  margin-top: 64px;
+  width: 75%;
+  height: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  p {
+    margin: 0px;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 275%;
+    font-weight: 500;
+    text-decoration: none;
+  }
+}
+
+.fa-power-off {
+  display: flex;
+  text-shadow: 0px 1px 4px white;
+  margin-left: 15px;
+  font-size: 30px;
+  color: white;
+  text-decoration: none;
+  p {
+    margin-left: 8px;
+    font-family: 'Quicksand', sans-serif;
+  }
+}
+
+* {
+  text-decoration: none;
+}

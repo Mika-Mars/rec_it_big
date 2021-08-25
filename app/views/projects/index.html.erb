@@ -1,4 +1,9 @@
 <div class="biggy-container">
+  <div class="go-back">
+    <%= link_to root_path do %>
+      <i class="fas fa-arrow-left"></i>
+    <% end %>
+  </div>
   <div class="pj-list">
     <% @projects.each do |pj| %>
       <%= link_to project_path(pj.id), class: "pj-card" do %>
