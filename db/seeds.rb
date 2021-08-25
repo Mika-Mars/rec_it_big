@@ -33,7 +33,7 @@ Project.create(
 
 5.times do
   project = Project.new(
-    title: Faker::ChuckNorris.fact,
+    title: Faker::Cannabis.cannabinoid,
     user_id: 1
   )
   project.save!
