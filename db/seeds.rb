@@ -32,12 +32,11 @@ Project.create(
 )
 
 5.times do
-    project = Project.new(
-      title: Faker::Cannabis.cannabinoid,
-      user_id: 1,
-    )
-    project.save!
-  end
+  project = Project.new(
+    title: Faker::Cannabis.cannabinoid,
+    user_id: 1
+  )
+  project.save!
+end
 
-  count = Project.count
-  p "#{count} project have been created"
+p "#{Project.count} project have been created"
