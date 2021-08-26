@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show]
+  before_action :set_project, only: [:show, :edit, :destroy]
 
   def show
     @voice_record = VoiceRecord.new
@@ -27,6 +27,12 @@ class ProjectsController < ApplicationController
     @project.update(project_params)
     redirect_to project_path
   end
+
+  def destroy
+    @project.destroy
+    redirect_to projects_path(@project.list)
+  end
+
 
   private
 
