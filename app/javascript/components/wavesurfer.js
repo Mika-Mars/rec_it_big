@@ -32,25 +32,6 @@ const initWavesurfer = () => {
       wave_surfer.stop();
     });
 
-    // buttons.play.addEventListener("click", function() {
-    //   wave_surfer.pause();
-
-    //   buttons.pause.disabled = true;
-    //   buttons.play.disabled = false;
-    // }, false);
-
-    // buttons.play.addEventListener("click", function() {
-    //   wave_surfer.stop();
-
-    //   buttons.stop.disabled = true;
-    //   buttons.pause.disabled = true;
-    //   buttons.play.disabled = false;
-    // }, false);
-
-    // wave_surfer.on('ready',  function () {
-    //   buttons.play.disabled = false;
-    // });
-
     window.addEventListener('resize', function (){
       const currentProgress = wave_surfer.getCurrentTime() / wave_surfer.getDuration();
 
@@ -60,12 +41,9 @@ const initWavesurfer = () => {
 
       wave_surfer.seekTo(currentProgress);
 
-      // buttons.stop.disabled = false;
-      // buttons.pause.disabled = true;
-      // buttons.play.disabled = false;
     });
 
-    wave_surfer.load('http://ia902606.us.archive.org/35/items/shortpoetry_047_librivox/song_cjrg_teasdale_64kb.mp3')
+    wave_surfer.load('@project.song.key')
   }
 }
 
