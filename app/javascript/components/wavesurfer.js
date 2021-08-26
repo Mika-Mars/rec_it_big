@@ -3,8 +3,8 @@ import WaveSurfer from 'wavesurfer.js'
 
 
 const initWavesurfer = () => {
- 
-   
+
+
       const play_wave = document.querySelector("#btn_play");
       const pause_wave = document.getElementById("btn_pause");
       const stop_wave = document.getElementById("btn_stop");
@@ -31,17 +31,16 @@ const initWavesurfer = () => {
     stop_wave.addEventListener("click", (event) => {
       wave_surfer.stop();
     });
-    
-    
+
     window.addEventListener('resize', function (){
       const currentProgress = wave_surfer.getCurrentTime() / wave_surfer.getDuration();
-    
-    
+
+
       wave_surfer.empty();
       wave_surfer.drawBuffer();
-    
+
       wave_surfer.seekTo(currentProgress);
-  
+
     });
 
     wave_surfer.load('@project.song.key')
@@ -49,4 +48,3 @@ const initWavesurfer = () => {
 }
 
 export { initWavesurfer }
-

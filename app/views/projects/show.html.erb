@@ -10,8 +10,8 @@
 
       <div>
         <%= simple_form_for(@project) do |f| %>
-          <%= f.input :song, as: :file %>
-          <%= f.submit %>
+          <%= f.input :song, as: :file, class:"btn-upload btn px-5" %>
+          <%= f.button :submit, "Upload", class:"btn-upload btn px-5" %>
         <% end %>
       </div>
       <% if @project.song.attached? %>

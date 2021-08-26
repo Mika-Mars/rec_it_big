@@ -1,46 +1,41 @@
 // Specific CSS for your home-page
 section{
-    height: 80vh;
-    padding: 40px 0;
-}
-home-form{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    height: 100%;
-    color: white;
-}
-label{
-    font-weight: 800;
-    font-size: 1.5rem;
-    text-shadow: 5px 5px 20px  rgb(135, 220, 191) ;
-}
-input.user{
-    border: 0;
-    border-radius: 16px;
-    width: 60%;
-    height: 45px;
-    background: linear-gradient( rgba(16, 5, 61, 0.9), rgba(0, 0, 0, 0.6));
-    box-shadow: 10px 10px 30px rgba(255, 251, 251, 0.1);
-}
-.password{
-    width: 100%;
-    text-align: center;
-}
-.password p{
-    text-align: left;
-    font-size: .7rem;
-    padding: 8px 0 0 24%;
-    text-shadow: 3px 3px 20px  rgb(135, 220, 191);
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.home-btn {
-  text-align: left;
-  padding-left: 40px;
+section h1 {
+  flex-wrap: wrap;
+  font-size: 200%;
+
+}
+
+.login-btn {
+  margin: 32px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 350%;
   color: white;
-  font-size: 12px;
-  text-shadow: 5px 5px 20px  rgb(135, 220, 191) ;
+  font-weight: 700;
+  text-shadow: 5px 5px 20px  rgb(229, 250, 243) ;
+  &:hover {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+.signup-btn {
+  font-size: 120%;
+  margin: 32px;
+  text-align: left;
+  color: white;
+  text-shadow: 5px 5px 20px  rgb(229, 250, 243) ;
+  &:hover {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+  }
 }
 
 .logged-btn {

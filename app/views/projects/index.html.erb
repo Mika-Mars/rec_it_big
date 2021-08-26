@@ -16,12 +16,14 @@
         </div>
         <%= link_to project_path(pj.id), method: :delete, data: { confirm: "Are you sure you want to remove #{@project.title}"} do %>
         <div class="center">
+
             <i class="fas fa-trash-alt"></i>
           </div>
           <% end %>
         <% end %>
       </div>
       <% end %>
+
 </div>
 <div class="button-new-project">
   <div id="new-project"><%= icon('fas', 'plus-circle')%></div>
