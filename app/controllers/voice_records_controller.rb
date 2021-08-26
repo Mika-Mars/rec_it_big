@@ -1,25 +1,24 @@
 class VoiceRecordsController < ApplicationController
- def index
+  def index
     @voice_records = VoiceRecord.all
- end
+  end
 
- def create
+  def create
     @voice_record = VoiceRecord.new(voice_record_params)
- end
+  end
 
- def destroy
+  def destroy
     @voice_record.destroy
     redirect_to projects_path, notice: "Voice record was successfully delete"
- end
+  end
 
- private
+  private
 
-    def set_voice_record
-        @voice_record = VoiceRecord.find(params[:id])
-    end
+  def set_voice_record
+    @voice_record = VoiceRecord.find(params[:id])
+  end
 
-    def voice_record_params
-        params.require(:voice_record).permit(:title, :starting_time, :project_id)
-    end
-
+  def voice_record_params
+    params.require(:voice_record).permit(:title, :starting_time, :project_id, :voice)
+  end
 end
