@@ -14,11 +14,11 @@
           <p><%= pj.created_at %></p>
         </div>
         <div class="center">
-          <%= link_to projects_path(@project), method: :delete, data: { confirm: "Are you sure you want to remove #{@project.title}"} do %>
+          <%= link_to project_path(pj.id), method: :delete, data: { confirm: "Are you sure you want to remove #{@project.title}"} do %>
             <i class="fas fa-trash-alt"></i>
           <% end %>
         </div>
-        <% end %>
+      <% end %>
     <% end %>
   </div>
 </div>
