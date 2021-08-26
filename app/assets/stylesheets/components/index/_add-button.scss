@@ -24,11 +24,22 @@
   padding: 8px;
   bottom: 0px;
   right: -400px;
-  background-color: rgba(0, 0, 0, 0.918);
+  background-image: linear-gradient( rgba(102, 9, 71, 0.9),
+                  rgba(0, 0, 0, 0.9));
   border-radius: 4px;
+  transition: all 0.6s ease;
+  border: ridge;
+  border-width: 4px;
+  border-color: rgba(138, 34, 120, 0.5);
+  border-radius: 8px;
   transition: all 0.6s ease-in-out;
 }
 
 .btn-create {
   justify-content: center;
+  background-color: rgba(138, 34, 121, 0.7);
+  border: outset;
+  border-width: 4px;
+  border-color: rgba(15, 15, 15, 0.7);
+  border-radius: 8px;
 }
