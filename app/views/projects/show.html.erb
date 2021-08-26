@@ -3,7 +3,7 @@
         <h2><%= @project.title %></h2>
     </div>
 
-    <div class="modalsong hidden">
+    <div class="modalsong">
       <div>
         <%= @project.title %>
       </div>
@@ -17,14 +17,26 @@
       <% if @project.song.attached? %>
         <%= cl_video_tag @project.song.key,:source_types => [:mp3],:controls => true,:poster => false %>
       <%end%>
+      <% if @project.voice_records.first %>
+        <% @project.voice_records.each do |vr| %>
+          <%= cl_video_tag vr.voice.key,:source_types => [:mp3],:controls => true,:poster => false %>
+        <%end%>
+      <%end%>
+
+    </div>
+
+        <div class="notes">
+
+        </div>
+    </div>
+    <div class="project_footer">
     </div>
 
     <div class="project_body">
         <div id="waveform"></div>
         <input type="button" class="wave_btn" id="btn_play" value="play"/>
         <input type="button" class="wave_btn" id="btn_pause" value="Pause"/>
-        <input type="button" class="wave_btn" id="btn_stop" value="stop"/>    
+        <input type="button" class="wave_btn" id="btn_stop" value="stop"/>
     </div>
     <%= render 'shared/footer' unless @disable_nav %>
-
 </div>
