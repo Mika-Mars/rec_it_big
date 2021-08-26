@@ -22,24 +22,14 @@ const getAudio = () => {
             }
           })
           mediaRecorder.onstop = function (e) {
-            const blob = new Blob(chunks, {
-              'type': 'audio/ogg; codecs=opus'
-            });
+            const blob = new Blob(chunks);
             chunks = [];
-            console.log(blob);
             const formData = new FormData();
-            formData.append('audio-file', blob);
-            fetch(`http://localhost:3000/projects/${recButton.dataset.project}/voicerecords`, {
+            formData.append('voice_record[voice]', blob);
+            formData.append('authenticity_token', recButton.dataset.token);
+            fetch(`http://localhost:3000/projects/${recButton.dataset.project}/voice_records`, {
               method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify({
-                title: "a changer",
-                starting_time: 99,
-                project_id: `${recButton.dataset.project}`,
-                voice: formData
-              })
+              body: formData
             });
           }
         })
