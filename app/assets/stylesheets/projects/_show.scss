@@ -22,17 +22,10 @@ h2{
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-around;
-    background-color: blue !important;
 }
-.voice_records{
-    width: 30vw;
-    background-color: aqua;
-}
-.notes{
-    width: 70vw;
-}
-.project_footer{
-    height: 20vh;
-    width: 100%;
-    background-color: red !important;
-}
+
+.wave_btn:hover{
+    opacity: 1;
+    color: red;
+    box-shadow: 0 10px 30px, rgba(0,0,0,.5);
+ }
