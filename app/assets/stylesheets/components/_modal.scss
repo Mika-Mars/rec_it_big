@@ -1,8 +1,30 @@
 .modalsong {
-  height: 150px;
-  background-color: red;
+  height: 200px;
+  background-color: #3e1f47;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 20px;
+  color: white;
+  border-radius: 7px;
 }
 
+.btn-upload {
+  justify-content: center;
+  background-color: rgba(138, 34, 121, 0.7);
+  border: outset;
+  border-width: 4px;
+  border-color: rgba(15, 15, 15, 0.7);
+  border-radius: 8px;
+}
+
+.btn:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+
+.btn:hover {
+  color: #0E0000;
+  text-decoration: none;
+}
 .hidden{
   display: none;
 }
