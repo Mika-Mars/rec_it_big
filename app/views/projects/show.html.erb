@@ -23,8 +23,8 @@
         <div id="waveform"></div>
         <input type="button" class="wave_btn" id="btn_play" value="play" disabled="disabled"/>
         <input type="button" class="wave_btn" id="btn_pause" value="Pause" disabled="disabled"/>
-        <input type="button" class="wave_btn" id="btn_stop" value="stop" disabled="disabled"/>
-      
+        <input type="button" class="wave_btn" id="btn_stop" value="stop" disabled="disabled"/>    
     </div>
-    
+    <%= render 'shared/footer' unless @disable_nav %>
+
 </div>
