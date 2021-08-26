@@ -6,7 +6,7 @@ const initWavesurfer = () => {
  
    
       const play_wave = document.querySelector("#btn_play");
-      const pause = document.getElementById("btn_pause");
+      const pause_wave = document.getElementById("btn_pause");
       const stop_wave = document.getElementById("btn_stop");
 
   const container = document.querySelector("#waveform")
@@ -23,12 +23,13 @@ const initWavesurfer = () => {
     console.dir(play_wave);
 
     play_wave.addEventListener("click", (event) => {
-      console.log("toto");
       wave_surfer.play();
     });
+    pause_wave.addEventListener("click", (event) => {
+      wave_surfer.pause();
+    });
     stop_wave.addEventListener("click", (event) => {
-      console.log("toto");
-      wave_surfer.play();
+      wave_surfer.stop();
     });
     
     // buttons.play.addEventListener("click", function() {
