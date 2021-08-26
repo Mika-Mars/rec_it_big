@@ -10,8 +10,8 @@
 
       <div>
         <%= simple_form_for(@project) do |f| %>
-          <%= f.input :song, as: :file %>
-          <%= f.submit %>
+          <%= f.input :song, as: :file, class:"btn-upload btn px-5" %>
+          <%= f.button :submit, "Upload", class:"btn-upload btn px-5" %>
         <% end %>
       </div>
       <% if @project.song.attached? %>
@@ -23,7 +23,7 @@
         <div id="waveform"></div>
         <input type="button" class="wave_btn" id="btn_play" value="play" disabled="disabled"/>
         <input type="button" class="wave_btn" id="btn_pause" value="Pause" disabled="disabled"/>
-        <input type="button" class="wave_btn" id="btn_stop" value="stop" disabled="disabled"/>    
+        <input type="button" class="wave_btn" id="btn_stop" value="stop" disabled="disabled"/>
     </div>
     <%= render 'shared/footer' unless @disable_nav %>
 
