@@ -4,6 +4,10 @@
   bottom: 70px;
 }
 
+#new-project {
+  position: absolute;
+}
+
 .fa-plus-circle {
   color: antiquewhite;
   font-size: 50px;
@@ -28,6 +32,7 @@
   border-width: 4px;
   border-color: rgba(138, 34, 120, 0.5);
   border-radius: 8px;
+  transition: all 0.6s ease-in-out;
 }
 
 .btn-create {

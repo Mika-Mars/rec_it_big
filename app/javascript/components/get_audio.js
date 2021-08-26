@@ -11,7 +11,7 @@ const getAudio = () => {
           const mediaRecorder = new MediaRecorder(stream);
           recButton.addEventListener('click', () => {
             if (mediaRecorder.state === "inactive") {
-              mediaRecorder.start()
+              mediaRecorder.start();
               console.log(mediaRecorder.state);
               mediaRecorder.ondataavailable = (e) => {
                 chunks.push(e.data);
@@ -23,11 +23,24 @@ const getAudio = () => {
           })
           mediaRecorder.onstop = function (e) {
             const blob = new Blob(chunks, {
-              'type': 'audio/wav; codecs=MS_PCM'
+              'type': 'audio/ogg; codecs=opus'
             });
             chunks = [];
-            const audioURL = window.URL.createObjectURL(blob);
-            console.log(audioURL);
+            console.log(blob);
+            const formData = new FormData();
+            formData.append('audio-file', blob);
+            fetch(`http://localhost:3000/projects/${recButton.dataset.project}/voicerecords`, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                title: "a changer",
+                starting_time: 99,
+                project_id: `${recButton.dataset.project}`,
+                voice: formData
+              })
+            });
           }
         })
         .catch((err) => {
