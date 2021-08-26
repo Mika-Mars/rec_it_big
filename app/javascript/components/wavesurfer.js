@@ -3,8 +3,8 @@ import WaveSurfer from 'wavesurfer.js'
 
 
 const initWavesurfer = () => {
- 
-   
+
+
       const play_wave = document.querySelector("#btn_play");
       const pause = document.getElementById("btn_pause");
       const stop_wave = document.getElementById("btn_stop");
@@ -30,35 +30,35 @@ const initWavesurfer = () => {
       console.log("toto");
       wave_surfer.play();
     });
-    
+
     // buttons.play.addEventListener("click", function() {
     //   wave_surfer.pause();
-    
+
     //   buttons.pause.disabled = true;
     //   buttons.play.disabled = false;
     // }, false);
-    
+
     // buttons.play.addEventListener("click", function() {
     //   wave_surfer.stop();
-    
+
     //   buttons.stop.disabled = true;
     //   buttons.pause.disabled = true;
     //   buttons.play.disabled = false;
     // }, false);
-    
+
     // wave_surfer.on('ready',  function () {
     //   buttons.play.disabled = false;
     // });
-    
+
     window.addEventListener('resize', function (){
       const currentProgress = wave_surfer.getCurrentTime() / wave_surfer.getDuration();
-    
-    
+
+
       wave_surfer.empty();
       wave_surfer.drawBuffer();
-    
+
       wave_surfer.seekTo(currentProgress);
-    
+
       // buttons.stop.disabled = false;
       // buttons.pause.disabled = true;
       // buttons.play.disabled = false;
@@ -69,4 +69,3 @@ const initWavesurfer = () => {
 }
 
 export { initWavesurfer }
-
