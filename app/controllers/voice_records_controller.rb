@@ -5,6 +5,9 @@ class VoiceRecordsController < ApplicationController
 
   def create
     @voice_record = VoiceRecord.new(voice_record_params)
+    @project = Project.find(params[:project_id])
+    @voice_record.project = @project
+    @voice_record.save!
   end
 
   def destroy
