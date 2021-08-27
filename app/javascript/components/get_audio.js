@@ -12,13 +12,11 @@ const getAudio = () => {
           recButton.addEventListener('click', () => {
             if (mediaRecorder.state === "inactive") {
               mediaRecorder.start();
-              console.log(mediaRecorder.state);
               mediaRecorder.ondataavailable = (e) => {
                 chunks.push(e.data);
               }
             } else {
               mediaRecorder.stop();
-              console.log(mediaRecorder.state);
             }
           })
           mediaRecorder.onstop = function (e) {
@@ -27,7 +25,7 @@ const getAudio = () => {
             const formData = new FormData();
             formData.append('voice_record[voice]', blob);
             formData.append('authenticity_token', recButton.dataset.token);
-            fetch(`http://localhost:3000/projects/${recButton.dataset.project}/voice_records`, {
+            fetch(window.location.href + "/voice_records", {
               method: 'POST',
               body: formData
             });
