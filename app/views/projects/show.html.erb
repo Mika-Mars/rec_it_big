@@ -18,9 +18,6 @@
         <%end%>
       </div>
       <div class="wavebody">
-        <% if @project.song.attached? %>
-          <% instru = cloudinary_url(@project.song.key, :resource_type=>"video") %>
-        <%end%>
         <div id="waveform" data-instru="<%= instru %>">
         </div>
         <input type="button" class="wave_btn" id="btn_play" value="play"/>
