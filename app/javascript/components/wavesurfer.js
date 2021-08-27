@@ -43,7 +43,7 @@ const initWavesurfer = () => {
 
     });
 
-    wave_surfer.load('@project.song.key')
+    wave_surfer.load('http://ia902606.us.archive.org/35/items/shortpoetry_047_librivox/song_cjrg_teasdale_64kb.mp3')
   }
 }
 
