@@ -7,7 +7,7 @@ const initWavesurfer = () => {
   const stop_wave = document.getElementById("btn_stop");
   const container = document.querySelector("#waveform");
 
-  if (container) {
+  if (container.dataset.instru) {
     const wave_surfer = WaveSurfer.create({
       container: '#waveform',
       waveColor: 'black',
