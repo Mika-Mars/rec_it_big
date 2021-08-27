@@ -1,5 +1,10 @@
 <div class="project_container">
   <div class="project_banner">
+    <div class="go-back">
+      <%= link_to projects_path do %>
+        <i class="fas fa-arrow-left"></i>
+      <% end %>
+   </div>
     <h2><%= @project.title %></h2>
   </div>
   <div class="pj-body">
@@ -41,7 +46,7 @@
     </div>
     <div class="textarea">
       <%= simple_form_for [@project, @note] do |f| %>
-        <%= f.input :content, label: false, :as => :text, :input_html => { id: "notes", :rows => 15, :cols => 30, value: "#{@project.note.content}"} %>
+        <%# <%= f.input :content, label: false, :as => :text, :input_html => { id: "notes", :rows => 15, :cols => 30, value: "#{@project.note.content}"} %> %>
         <%= f.submit 'Update note'%>
         <input type="hidden" name="_method" value="patch">
       <% end %>
