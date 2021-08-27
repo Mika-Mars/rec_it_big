@@ -1,17 +1,19 @@
 <div class="footer">
-    <div class="foot-item dropdown">
-      <%= image_tag "https://cdn4.iconfinder.com/data/icons/mono-color-web-mobile/250/Home-512.png", class: "avatar dropdown-toggle", id: "footerDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="footerDropdown">
-        <%= link_to "Home", "/", class: "dropdown-item" %>
-        <%= link_to "Projects", projects_path, class: "dropdown-item" %>
-      </div>
+    <div class="foot-item btn">
+      <%= link_to "/" do %>
+        <%= image_tag "https://cdn4.iconfinder.com/data/icons/mono-color-web-mobile/250/Home-512.png", id: "footerbtn" %>
+      <% end %>
+      <%# <div class=" dropdown-menu-right" aria-labelledby="footerDropdown">
+        <%= link_to "Home", "/", class: "btn" %>
+        <%# <%= link_to "Projects", projects_path, class: "dropdown-item" %>
+      <%# </div> %>
     </div>
 
     <div class="foot-item btn" id="footerbtn" data-token="<%= form_authenticity_token %>">
       <%= icon('fas', 'record-vinyl') %>
     </div>
 
-    <div class="foot-item dropdown" id="footeraddbtn">
+    <div class="foot-item btn" id="footeraddbtn">
       <%= icon('fas', 'plus-circle') %>
     </div>
 </div>
