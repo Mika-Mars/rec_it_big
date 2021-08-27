@@ -1,4 +1,5 @@
 import WaveSurfer from 'wavesurfer.js'
+import { getAudio } from '../components/get_audio';
 
 const initWavesurfer = () => {
   const play_wave = document.querySelector("#btn_play");
@@ -28,12 +29,14 @@ const initWavesurfer = () => {
 
     window.addEventListener('resize', function (){
       const currentProgress = wave_surfer.getCurrentTime() / wave_surfer.getDuration();
-      
+
       wave_surfer.empty();
       wave_surfer.drawBuffer();
       wave_surfer.seekTo(currentProgress);
     });
     wave_surfer.load(container.dataset.instru);
+
+    getAudio(Math.round(wave_surfer.getCurrentTime() * 1000));
   }
 }
 

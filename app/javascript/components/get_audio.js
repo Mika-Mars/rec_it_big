@@ -1,4 +1,4 @@
-const getAudio = () => {
+const getAudio = (currentTime) => {
   const recButton = document.querySelector('#footerbtn');
   const constraints = {
     audio: true
@@ -24,6 +24,7 @@ const getAudio = () => {
             chunks = [];
             const formData = new FormData();
             formData.append('voice_record[voice]', blob);
+            formData.append('voice_record[starting_time"]', currentTime);
             formData.append('authenticity_token', recButton.dataset.token);
             fetch(window.location.href + "/voice_records", {
               method: 'POST',
