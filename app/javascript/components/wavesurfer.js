@@ -36,7 +36,7 @@ const initWavesurfer = () => {
     });
     wave_surfer.load(container.dataset.instru);
 
-    getAudio(Math.round(wave_surfer.getCurrentTime() * 1000));
+    // getAudio(Math.round(wave_surfer.getCurrentTime() * 1000));
   }
 }
 
