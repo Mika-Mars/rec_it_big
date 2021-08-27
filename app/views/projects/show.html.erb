@@ -10,10 +10,10 @@
           <%= f.button :submit, "Upload", class:"btn-upload btn px-5"%>
         <% end %>
       </div>
-      <div>
+      <div class="voice-record">
         <% if @project.voice_records.first %>
           <% @project.voice_records.each do |vr| %>
-            <% vrc = cloudinary_url(vr.song.key, :resource_type=>"video") %>
+            <% vrc = cloudinary_url(vr.voice.key, :resource_type=>"video") %>
             <%= audio_tag vrc,:source_types => [:mp3],:controls => true,:poster => false %>
           <%end%>
         <%end%>
