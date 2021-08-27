@@ -3,26 +3,35 @@
     flex-direction: column;
     align-items: center;
     height: 100vh;
-    width: 95%;
-    background-color: azure;
+    width: 100%;
+    margin: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7),
+    rgba(102, 9, 71, 0.7)),
+      url("https://www.halton.com/wp-content/uploads/2020/05/Concert_hall_rock_concert-1366x668.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
 }
 .project_banner{
     width: 100%;
-    height: 5vh;
-    background-color: greenyellow !important;
+    height: 25vh;
+    display: flex;
+    box-shadow: 0 10px 30px rgba(0,0,0,.3);
+    justify-content: center;
+    align-items: center;
+    color: #33c6f4;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.7);
 }
 .project_banner h2{
     font-size: 2rem ;
 }
-.wavebody{
-    height: 60vh;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-}
+.instrumental{
+    width: 20%;
+    margin: 10px 5px 10px 10px;
+    height: 62vh;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
 
+}
 .wave_btn:hover{
     opacity: 1;
     color: red;
@@ -32,12 +41,78 @@
     display: flex;
     height: 400px;
 }
-
+#waveform canvas{
+    width: 500px;
+}
 .pj-body {
   display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.cloud_formulary{
+    display: none;
+}
+.textarea {
+  width: 75%;
+  height: 63.5vh;
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+  margin: 10px 10px 10px 5px;
+}
+.wavebody{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+    height: 68vh;
+    border-radius: 5px;
+    width: 100%;
+}
+.lecture{
+    position: relative;
+    width: 100%;
+    
+}
+.wave_btn{
+color: transparent;
+background-color: transparent;
+border: 0;
+height: 62px;
+width: 62px;
+z-index: 5;
+}
+.wave_stop{
+    color: transparent;
+    background-color: transparent;
+    border: 0;
+    height: 30px;
+    width: 30px;
+    z-index: 5;
+    }
+.lecture input{
+    position: relative;
+}
+.lecture svg{
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top:25px;
+    left: 28px;
+}
+.lecture .button_pp{
+    border-radius: 50%;
+    background-color: black;
+    border: 0;
+    position: absolute;
+    top: -60px;
+    left: 0px;
+}
+.lecture .btn_stop{
+    border-radius: 50%;
+    background-color: black;
+    border: 0;
+    position: absolute;
+    top: -85px;
+    right: 0px;
 }
 
-.textarea {
-  width: 70%;
-  height: 80%;
-}

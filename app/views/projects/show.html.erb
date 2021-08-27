@@ -4,28 +4,38 @@
   </div>
   <div class="pj-body">
     <div class="instrumental">
-      <div>
-        <%= simple_form_for(@project) do |f| %>
-          <%= f.input :song, as: :file, class:"btn-upload btn px-5" %>
-          <%= f.button :submit, "Upload", class:"btn-upload btn px-5" %>
-        <% end %>
-      </div>
-      <div>
-        <% if @project.song.attached? %>
-          <%= cl_video_tag @project.song.key,:source_types => [:mp3],:controls => true,:poster => false %>
-        <%end%>
-        <% if @project.voice_records.first %>
-          <% @project.voice_records.each do |vr| %>
-            <%= cl_video_tag vr.voice.key,:source_types => [:mp3],:controls => true,:poster => false %>
+      <div class="cloud_formulary">
+        <div>
+          <%= simple_form_for(@project) do |f| %>
+            <%= f.input :song, as: :file, class:"btn-upload btn px-5" %>
+            <%= f.button :submit, "Upload", class:"btn-upload btn px-5" %>
+          <% end %>
+        </div>
+        <div>
+          <% if @project.song.attached? %>
+            <%= cl_video_tag @project.song.key,:source_types => [:mp3],:controls => true,:poster => false %>
           <%end%>
-        <%end%>
+          <% if @project.voice_records.first %>
+            <% @project.voice_records.each do |vr| %>
+              <%= cl_video_tag vr.voice.key,:source_types => [:mp3],:controls => true,:poster => false %>
+            <%end%>
+          <%end%>
+        </div>
       </div>
       <div class="wavebody">
         <div id="waveform">
         </div>
-        <input type="button" class="wave_btn" id="btn_play" value="play"/>
-        <input type="button" class="wave_btn" id="btn_pause" value="Pause"/>
-        <input type="button" class="wave_btn" id="btn_stop" value="stop"/>
+        <div class="lecture">
+          <button class="button_pp">
+            <input type="button" class="wave_btn" id="btn_pause" value=""><i class="fas fa-pause svg_pp"></i></input>
+          </button>
+          <button class="button_pp">
+            <input type="button" class="wave_btn" id="btn_play" value=""><i class="fas fa-play svg_pp"></i></input>
+          </button>
+          <button class="btn_stop">
+            <input type="button" class="wave_stop" id="btn_stop" value=""><i class="fas fa-stop svg_stop"></i></input>
+          </button>
+        </div>
       </div>
     </div>
     <div class="textarea">
