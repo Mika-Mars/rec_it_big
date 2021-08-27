@@ -1,15 +1,11 @@
 import WaveSurfer from 'wavesurfer.js'
 
-
-
 const initWavesurfer = () => {
+  const play_wave = document.querySelector("#btn_play");
+  const pause_wave = document.getElementById("btn_pause");
+  const stop_wave = document.getElementById("btn_stop");
+  const container = document.querySelector("#waveform");
 
-
-      const play_wave = document.querySelector("#btn_play");
-      const pause_wave = document.getElementById("btn_pause");
-      const stop_wave = document.getElementById("btn_stop");
-
-  const container = document.querySelector("#waveform")
   if (container) {
     const wave_surfer = WaveSurfer.create({
       container: '#waveform',
@@ -18,10 +14,8 @@ const initWavesurfer = () => {
       progressColor: 'purple'
     });
     wave_surfer.on('ready', function () {
-      wave_surfer.play();
+      wave_surfer.stop();
     });
-    console.dir(play_wave);
-
     play_wave.addEventListener("click", (event) => {
       wave_surfer.play();
     });
@@ -34,16 +28,12 @@ const initWavesurfer = () => {
 
     window.addEventListener('resize', function (){
       const currentProgress = wave_surfer.getCurrentTime() / wave_surfer.getDuration();
-
-
+      
       wave_surfer.empty();
       wave_surfer.drawBuffer();
-
       wave_surfer.seekTo(currentProgress);
-
     });
-
-    wave_surfer.load('http://ia902606.us.archive.org/35/items/shortpoetry_047_librivox/song_cjrg_teasdale_64kb.mp3')
+    wave_surfer.load(container.dataset.instru);
   }
 }
 
