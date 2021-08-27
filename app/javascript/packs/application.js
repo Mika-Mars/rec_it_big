@@ -24,10 +24,8 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import "@fortawesome/fontawesome-free/js/all";
-import { addNewProject } from '../components/add_button';
+import { addNewProject } from '../components/add_project_button';
 import { addNewSong } from '../components/modal';
-import { getAudio } from '../components/get_audio';
 import { initWavesurfer } from '../components/wavesurfer';
 
 
@@ -35,6 +33,5 @@ import { initWavesurfer } from '../components/wavesurfer';
 document.addEventListener('turbolinks:load', () => {
   addNewSong();
   addNewProject();
-  getAudio();
   initWavesurfer();
 });

@@ -1,15 +1,12 @@
 import WaveSurfer from 'wavesurfer.js'
-
-
+import { getAudio } from '../components/get_audio';
 
 const initWavesurfer = () => {
+  const play_wave = document.querySelector("#btn_play");
+  const pause_wave = document.getElementById("btn_pause");
+  const stop_wave = document.getElementById("btn_stop");
+  const container = document.querySelector("#waveform");
 
-
-      const play_wave = document.querySelector("#btn_play");
-      const pause_wave = document.getElementById("btn_pause");
-      const stop_wave = document.getElementById("btn_stop");
-
-  const container = document.querySelector("#waveform")
   if (container) {
     const wave_surfer = WaveSurfer.create({
       container: '#waveform',
@@ -19,10 +16,8 @@ const initWavesurfer = () => {
       progressColor: '#33c6f4'
     });
     wave_surfer.on('ready', function () {
-      wave_surfer.play();
+      wave_surfer.stop();
     });
-    console.dir(play_wave);
-
     play_wave.addEventListener("click", (event) => {
       wave_surfer.play();
     });
@@ -36,15 +31,13 @@ const initWavesurfer = () => {
     window.addEventListener('resize', function (){
       const currentProgress = wave_surfer.getCurrentTime() / wave_surfer.getDuration();
 
-
       wave_surfer.empty();
       wave_surfer.drawBuffer();
-
       wave_surfer.seekTo(currentProgress);
-
     });
+    wave_surfer.load(container.dataset.instru);
 
-    wave_surfer.load('http://ia902606.us.archive.org/35/items/shortpoetry_047_librivox/song_cjrg_teasdale_64kb.mp3')
+    // getAudio(Math.round(wave_surfer.getCurrentTime() * 1000));
   }
 }
 
