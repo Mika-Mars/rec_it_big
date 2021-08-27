@@ -29,10 +29,11 @@
       </div>
     </div>
     <div class="textarea">
-      <textarea id="notes" name="notes"
-          rows="150" cols="30">
-        It was a dark and stormy night...
-      </textarea>
+      <%= simple_form_for [@project, @note] do |f| %>
+        <%= f.input :content, label: false, :as => :text, :input_html => { id: "notes", :rows => 15, :cols => 30, value: "#{@project.note.content}"} %>
+        <%= f.submit 'Update note'%>
+        <input type="hidden" name="_method" value="patch">
+      <% end %>
     </div>
   </div>
   <%= render 'shared/footer' unless @disable_nav %>

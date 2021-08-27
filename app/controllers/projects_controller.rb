@@ -16,6 +16,8 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
+    @note = Note.new(content: "")
+    @project.note = @note
     @project.user_id = current_user.id
     if @project.save!
       redirect_to project_path(@project)
@@ -33,6 +35,13 @@ class ProjectsController < ApplicationController
   def destroy
     @project.destroy
     redirect_to projects_path
+  end
+
+  def notes
+    @project = Project.find(params[:project_id])
+    @project.note.content = params[:note][:content]
+    @project.note.save!
+    redirect_to project_path(@project)
   end
 
 
