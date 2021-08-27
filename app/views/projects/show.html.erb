@@ -13,7 +13,8 @@
       <div>
         <% if @project.voice_records.first %>
           <% @project.voice_records.each do |vr| %>
-            <%= cl_video_tag vr.voice.key,:source_types => [:mp3],:controls => true,:poster => false %>
+            <% vrc = cloudinary_url(vr.song.key, :resource_type=>"video") %>
+            <%= audio_tag vrc,:source_types => [:mp3],:controls => true,:poster => false %>
           <%end%>
         <%end%>
       </div>
