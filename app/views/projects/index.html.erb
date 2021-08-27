@@ -4,23 +4,26 @@
       <i class="fas fa-arrow-left"></i>
     <% end %>
   </div>
+  <% @projects.each do |pj| %>
   <div class="pj-list">
-    <% @projects.each do |pj| %>
       <%= link_to project_path(pj.id), class: "pj-card" do %>
         <div class="pj-card-title">
           <h3><%= pj.title %></h3>
         </div>
         <div class="pj-card-create">
           <p><%= pj.created_at %></p>
+          
         </div>
+        <%= link_to project_path(pj.id), method: :delete, data: { confirm: "Are you sure you want to remove #{@project.title}"} do %>
         <div class="center">
-          <%= link_to projects_path(@project), method: :delete, data: { confirm: "Are you sure you want to remove #{@project.title}"} do %>
+
             <i class="fas fa-trash-alt"></i>
+          </div>
           <% end %>
-        </div>
         <% end %>
-    <% end %>
-  </div>
+      </div>
+      <% end %>
+
 </div>
 <div class="button-new-project">
   <div id="new-project"><%= icon('fas', 'plus-circle')%></div>

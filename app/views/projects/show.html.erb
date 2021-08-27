@@ -2,36 +2,34 @@
   <div class="project_banner">
     <h2><%= @project.title %></h2>
   </div>
-  <div class="modalsong">
-    <div>
-      <%= @project.title %>
+  <div class="pj-body">
+    <div class="instrumental">
+      <div>
+        <%= simple_form_for(@project) do |f| %>
+          <%= f.input :song, as: :file, class:"btn-upload btn px-5" %>
+          <%= f.button :submit, "Upload", class:"btn-upload btn px-5" %>data-instru="<%= instru %>"
+        <% end %>
+      </div>
+      <div>
+        <% if @project.voice_records.first %>
+          <% @project.voice_records.each do |vr| %>
+            <%= cl_video_tag vr.voice.key,:source_types => [:mp3],:controls => true,:poster => false %>
+          <%end%>
+        <%end%>
+      </div>
+      <div class="wavebody">
+        <% if @project.song.attached? %>
+          <% instru = cloudinary_url(@project.song.key, :resource_type=>"video") %>
+        <%end%>
+        <div id="waveform" data-instru="<%= instru %>">
+        </div>
+        <input type="button" class="wave_btn" id="btn_play" value="play"/>
+        <input type="button" class="wave_btn" id="btn_pause" value="Pause"/>
+        <input type="button" class="wave_btn" id="btn_stop" value="stop"/>
+      </div>
     </div>
-    <div id="form-instru">
-      <%= simple_form_for(@project) do |f| %>
-        <%= f.input :song, as: :file %>
-        <%= f.submit %>
-      <% end %>
+    <div class="textarea">
     </div>
-    <% if @project.voice_records.first %>
-      <% @project.voice_records.each do |vr| %>
-        <% vrc = cloudinary_url(vr.voice.key, :resource_type=>"video") %>
-        <%= audio_tag vrc, :source_types => [:mp3] %>
-      <%end%>
-    <%end%>
   </div>
-  <div class="notes">
-  </div>
-</div>
-<div class="project_footer">
-</div>
-<div class="project_body">
-  <% if @project.song.attached? %>
-      <% instru = cloudinary_url(@project.song.key, :resource_type=>"video") %>
-  <%end%>
-  <div id="waveform" data-instru="<%= instru %>"></div>
-  <input type="button" class="wave_btn" id="btn_play" value="play"/>
-  <input type="button" class="wave_btn" id="btn_pause" value="Pause"/>
-  <input type="button" class="wave_btn" id="btn_stop" value="stop"/>
-</div>
-<%= render 'shared/footer' unless @disable_nav %>
+  <%= render 'shared/footer' unless @disable_nav %>
 </div>
