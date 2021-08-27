@@ -13,11 +13,15 @@
       <div>
         <% if @project.voice_records.first %>
           <% @project.voice_records.each do |vr| %>
-            <%= cl_video_tag vr.voice.key,:source_types => [:mp3],:controls => true,:poster => false %>
+            <% vrc = cloudinary_url(vr.song.key, :resource_type=>"video") %>
+            <%= audio_tag vrc,:source_types => [:mp3],:controls => true,:poster => false %>
           <%end%>
         <%end%>
       </div>
       <div class="wavebody">
+        <% if @project.song.attached? %>
+          <% instru = cloudinary_url(@project.song.key, :resource_type=>"video") %>
+        <%end%>
         <div id="waveform" data-instru="<%= instru %>">
         </div>
         <input type="button" class="wave_btn" id="btn_play" value="play"/>
