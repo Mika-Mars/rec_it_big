@@ -10,9 +10,10 @@ const initWavesurfer = () => {
   if (container) {
     const wave_surfer = WaveSurfer.create({
       container: '#waveform',
-      waveColor: 'blue',
+      waveColor: 'black',
       vertical: true,
-      progressColor: 'purple'
+      minCanvasWidth: 220,
+      progressColor: '#33c6f4'
     });
     wave_surfer.on('ready', function () {
       wave_surfer.stop();

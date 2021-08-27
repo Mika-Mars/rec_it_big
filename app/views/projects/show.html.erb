@@ -4,19 +4,21 @@
   </div>
   <div class="pj-body">
     <div class="instrumental">
-      <div>
-        <%= simple_form_for(@project) do |f| %>
-          <%= f.input :song, as: :file, class:"btn-upload btn px-5" %>
-          <%= f.button :submit, "Upload", class:"btn-upload btn px-5"%>
-        <% end %>
-      </div>
-      <div class="voice-record">
-        <% if @project.voice_records.first %>
-          <% @project.voice_records.each do |vr| %>
-            <% vrc = cloudinary_url(vr.voice.key, :resource_type=>"video") %>
-            <%= audio_tag vrc,:source_types => [:mp3],:controls => true,:poster => false %>
+      <div class="cloud_formulary">
+        <div>
+          <%= simple_form_for(@project) do |f| %>
+            <%= f.input :song, as: :file, class:"btn-upload btn px-5" %>
+            <%= f.button :submit, "Upload", class:"btn-upload btn px-5"%>
+          <% end %>
+        </div>
+        <div class="voice-record">
+          <% if @project.voice_records.first %>
+            <% @project.voice_records.each do |vr| %>
+              <% vrc = cloudinary_url(vr.voice.key, :resource_type=>"video") %>
+              <%= audio_tag vrc,:source_types => [:mp3],:controls => true,:poster => false %>
+            <%end%>
           <%end%>
-        <%end%>
+        </div>
       </div>
       <div class="wavebody">
         <% if @project.song.attached? %>
@@ -24,9 +26,17 @@
         <%end%>
         <div id="waveform" data-instru="<%= instru %>">
         </div>
-        <input type="button" class="wave_btn" id="btn_play" value="play"/>
-        <input type="button" class="wave_btn" id="btn_pause" value="Pause"/>
-        <input type="button" class="wave_btn" id="btn_stop" value="stop"/>
+        <div class="lecture">
+          <button class="button_pp">
+            <input type="button" class="wave_btn" id="btn_pause" value=""><i class="fas fa-pause svg_pp"></i></input>
+          </button>
+          <button class="button_pp">
+            <input type="button" class="wave_btn" id="btn_play" value=""><i class="fas fa-play svg_pp"></i></input>
+          </button>
+          <button class="btn_stop">
+            <input type="button" class="wave_stop" id="btn_stop" value=""><i class="fas fa-stop svg_stop"></i></input>
+          </button>
+        </div>
       </div>
     </div>
     <div class="textarea">
