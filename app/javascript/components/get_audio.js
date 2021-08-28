@@ -1,5 +1,7 @@
-const getAudio = (currentTime) => {
-  const recButton = document.querySelector('#footerbtn');
+const getAudio = () => {
+  const recButton = document.querySelector('#footer-btn-instru');
+  const instruCurrentTime = document.querySelector('#waveform audio');
+  let tTime = 0;
   const constraints = {
     audio: true
   };
@@ -12,6 +14,7 @@ const getAudio = (currentTime) => {
           recButton.addEventListener('click', () => {
             if (mediaRecorder.state === "inactive") {
               mediaRecorder.start();
+              tTime = instruCurrentTime.currentTime;
               mediaRecorder.ondataavailable = (e) => {
                 chunks.push(e.data);
               }
@@ -19,12 +22,14 @@ const getAudio = (currentTime) => {
               mediaRecorder.stop();
             }
           })
-          mediaRecorder.onstop = function (e) {
+          mediaRecorder.onstop = () => {
             const blob = new Blob(chunks);
+            console.log(tTime);
             chunks = [];
             const formData = new FormData();
             formData.append('voice_record[voice]', blob);
-            formData.append('voice_record[starting_time"]', currentTime);
+            formData.append('voice_record[title]', "a changer");
+            formData.append('voice_record[starting_time]', tTime);
             formData.append('authenticity_token', recButton.dataset.token);
             fetch(window.location.href + "/voice_records", {
               method: 'POST',

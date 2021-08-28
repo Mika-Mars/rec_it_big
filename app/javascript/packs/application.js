@@ -27,11 +27,11 @@ import "bootstrap";
 import { addNewProject } from '../components/add_project_button';
 import { addNewSong } from '../components/modal';
 import { initWavesurfer } from '../components/wavesurfer';
-
-
+import { getAudio } from '../components/get_audio';
 
 document.addEventListener('turbolinks:load', () => {
   addNewSong();
   addNewProject();
   initWavesurfer();
+  getAudio();
 });

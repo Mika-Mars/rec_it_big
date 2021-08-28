@@ -83,8 +83,11 @@
 }
 
 .voice-record {
-  display: none;
+  display: flex;
+  position: absolute;
+  visibility: hidden;
 }
+
 .wavebody{
     display: flex;
     flex-direction: column-reverse;
