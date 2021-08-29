@@ -1,4 +1,4 @@
-import WaveSurfer from 'wavesurfer.js'
+import WaveSurfer from 'wavesurfer.js';
 
 const initWavesurfer = () => {
   const play_wave = document.querySelector("#btn_play");
@@ -14,6 +14,9 @@ const initWavesurfer = () => {
         waveColor: 'black',
         vertical: true,
         minCanvasWidth: 220,
+        barWidth: 2,
+        barHeight: 1,
+        barGap: 1,
         progressColor: '#33c6f4',
         backend: 'MediaElement'
       });
@@ -27,13 +30,27 @@ const initWavesurfer = () => {
         wave_surfer.stop();
       });
       wave_surfer.load(container.dataset.instru);
+
       wave_surfer.on('audioprocess', () => {
         voices.forEach(voice => {
-          if (voice.dataset.time == Math.round(wave_surfer.getCurrentTime())) {
+          if (voice.dataset.start == Math.round(wave_surfer.getCurrentTime())) {
             voice.play();
           }
         })
       })
+
+      wave_surfer.on('seek', () => {
+        voices.forEach(voice => {
+          if (voice.dataset.start <= wave_surfer.getCurrentTime() && wave_surfer.getCurrentTime() <= voice.dataset.end) {
+            voice.currentTime = wave_surfer.getCurrentTime() - voice.dataset.start;
+            voice.play();
+          } else {
+            voice.pause();
+            voice.currentTime = 0;
+          }
+        })
+      })
+
       wave_surfer.on('pause', () => {
         voices.forEach(voice => {
           voice.pause();

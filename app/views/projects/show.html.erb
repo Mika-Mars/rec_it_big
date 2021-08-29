@@ -21,7 +21,7 @@
           <% if @project.voice_records.first %>
             <% @project.voice_records.each do |vr| %>
               <% vrc = cloudinary_url(vr.voice.key, :resource_type=>"video") %>
-              <%= audio_tag vrc,:source_types => [:mp3],:controls => true,:poster => false, data: { time: vr.starting_time }, class: "voices" %>
+              <%= audio_tag vrc, data: { start: vr.starting_time, end: vr.ending_time }, class: "voices" %>
             <%end%>
           <%end%>
         </div>

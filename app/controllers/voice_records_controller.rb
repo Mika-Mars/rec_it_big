@@ -22,6 +22,6 @@ class VoiceRecordsController < ApplicationController
   end
 
   def voice_record_params
-    params.require(:voice_record).permit(:title, :starting_time, :project_id, :voice)
+    params.require(:voice_record).permit(:title, :starting_time, :ending_time, :project_id, :voice)
   end
 end
