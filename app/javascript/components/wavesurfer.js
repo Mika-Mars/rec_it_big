@@ -21,8 +21,7 @@ const initWavesurfer = () => {
         barWidth: 3,
         barHeight: 1,
         barGap: 1,
-        backend: 'MediaElement'
-        height: 1500,
+        backend: 'MediaElement',
         progressColor: 'white',
         backend: 'MediaElement',
         autoCenter: true,
@@ -42,7 +41,7 @@ const initWavesurfer = () => {
           // playIcon.classList.remove("d-none");
           playIcon.classList.remove("fa-pause");
           playIcon.classList.add("fa-play");
-          
+
         } else {
           event.currentTarget.dataset.playing = "true";
           wave_surfer.play();
@@ -51,7 +50,7 @@ const initWavesurfer = () => {
         }
 
       });
-      
+
       stop_wave.addEventListener("click", (event) => {
         wave_surfer.stop();
       });
