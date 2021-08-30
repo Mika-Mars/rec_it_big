@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :destroy]
-
+  skip_before_action :verify_authenticity_token
   def show
     @voice_record = VoiceRecord.new
     @note = Note.new
