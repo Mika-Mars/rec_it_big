@@ -44,11 +44,7 @@
       </div>
     </div>
     <div class="textarea">
-      <%= simple_form_for [@project, @note] do |f| %>
-        <%= f.input :content, label: false, :as => :text, :input_html => { id: "notes", :rows => 24 , :cols => 33, value: "#{@project.note.content}"} %>
-        <%= f.submit 'Update note'%>
-        <input type="hidden" name="_method" value="patch">
-      <% end %>
+      <textarea class="form-control text optional" id="notes" rows="24" cols="33" data-token="<%= form_authenticity_token %>" ><%= @project.note.content.strip %></textarea>
     </div>
   </div>
   <%= render 'shared/footer' unless @disable_nav %>
