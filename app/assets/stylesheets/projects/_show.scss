@@ -74,11 +74,12 @@ $wave_width: 75px;
 
  #waveform {
     display: flex;
-    height: calc(100% - #{$wave_width});
-    margin-top: 10px;
-    border-radius: 50% 50% 0 0;
-
+    height: calc(98% - #{$wave_width});
+    margin-top: 0px;
+    border-radius: 0 0 25% 25%;
+    overflow: hidden;
 }
+
 #waveform canvas{
     width: 500px;
 }
@@ -124,12 +125,12 @@ $wave_width: 75px;
     width: 100%;
     box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
     height: 100%;
-    border-radius: 37.5px 37.5px 5px 5px;
+    border-radius: 40px;
 }
 .lecture{
     width: 100%;
     position: relative;
-
+    margin-top: -8px;
 }
 .wave_btn{
 border: 0;
