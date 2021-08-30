@@ -5,7 +5,7 @@
     <% end %>
   </div>
   <% @projects.each do |pj| %>
-  <div class="pj-list">
+    <div class="pj-list">
       <%= link_to project_path(pj.id), class: "pj-card" do %>
         <div class="pj-card-title">
           <h3><%= pj.title %></h3>
@@ -21,10 +21,10 @@
 
             <i class="fas fa-trash-alt"></i>
           </div>
-          <% end %>
         <% end %>
-      </div>
       <% end %>
+    </div>
+  <% end %>
 
 </div>
 <div class="button-new-project">

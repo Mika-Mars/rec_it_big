@@ -48,7 +48,7 @@ section h1 {
 
 .index-btn {
   background: rgba(0, 0, 0, 0.5);
-  box-shadow: 0 0 4px rgba(83, 34, 59, 0.836);
+  box-shadow: 0 0 4px #FF79CD;
   border: ridge;
   border-width: 4px;
   border-color: rgba(138, 34, 120, 0.5);
@@ -60,7 +60,7 @@ section h1 {
   align-items: center;
   justify-content: center;
   color: white;
-  text-shadow: 0px 1px 4px rgb(192, 16, 133);
+  text-shadow: 0px 1px 5px rgb(192, 16, 133);
   font-family: 'Quicksand', sans-serif;
   &:hover {
     text-decoration: none;
