@@ -11,14 +11,18 @@ const initWavesurfer = () => {
     if (container.dataset.instru) {
       const wave_surfer = WaveSurfer.create({
         container: '#waveform',
-        waveColor: 'black',
+        waveColor: '#B06D9B',
         vertical: true,
         minCanvasWidth: 220,
-        barWidth: 2,
+        barWidth: 3,
         barHeight: 1,
         barGap: 1,
-        progressColor: '#33c6f4',
-        backend: 'MediaElement'
+        height: 1500,
+        progressColor: 'white',
+        backend: 'MediaElement',
+        autoCenter: true,
+        responsive: true,
+        scrollParent: true,
       });
       play_wave.addEventListener("click", (event) => {
         wave_surfer.play();
