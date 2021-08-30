@@ -35,8 +35,7 @@ const initWavesurfer = () => {
         if (isPlaying) {
           event.currentTarget.dataset.playing = "false";
           wave_surfer.pause();
-          // pauseIcon.classList.add("d-none");
-          // playIcon.classList.remove("d-none");
+      
           playIcon.classList.remove("fa-pause");
           playIcon.classList.add("fa-play");
 
@@ -50,7 +49,14 @@ const initWavesurfer = () => {
       });
 
       stop_wave.addEventListener("click", (event) => {
-        wave_surfer.stop();
+        const isPlaying = event.currentTarget.dataset.playing === "true";
+        const playIcon = document.querySelector("#play-icon");
+        const pauseIcon = document.querySelector("#pause-icon")
+          event.currentTarget.dataset.playing = "true";
+          wave_surfer.stop();
+          playIcon.classList.remove("fa-pause");
+          playIcon.classList.add("fa-play");
+
       });
       wave_surfer.load(container.dataset.instru);
 
