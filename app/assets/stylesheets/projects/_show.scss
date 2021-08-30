@@ -67,8 +67,8 @@
 $wave_width: 75px;
 .instrumental{
     width: $wave_width;
-    margin: 10px 5px 10px 10px;
-    height: 62vh;
+    margin: 25px 5px 10px 10px;
+    height: 78vh;
 
 }
 
@@ -123,9 +123,8 @@ $wave_width: 75px;
     justify-content: center;
     width: 100%;
     box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
-    height: 62.2vh;
+    height: 100%;
     border-radius: 37.5px 37.5px 5px 5px;
-    width: 100%;
 }
 .lecture{
     width: 100%;
@@ -143,20 +142,21 @@ width: $wave_width;
     width: 25px;
     z-index: 5;
     }
-.lecture input{
+.lecture input {
     position: relative;
 }
-.lecture .fas.fa-stop::before{
+.lecture .fas.fa-stop::before {
     font-size: 12px;
 }
-.lecture .button_pp{
+.lecture .button_pp {
     border-radius: 50%;
     font-size: 24px;
     background-image: linear-gradient(to right, #a5a5a5 0%, #ffffff  31%,#ffffff  71%, #a5a5a5  100%);
     border: 0;
     box-shadow: 0 0 10px rgb(77, 77, 77);
 }
-.lecture .btn_stop{
+
+.lecture .btn_stop {
     border-radius: 50%;
     height: 35px;
     width: 35px;

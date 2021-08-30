@@ -5,18 +5,22 @@
     <% end %>
   </div>
   <% @projects.each do |pj| %>
-    <div class="pj-list">
-      <%= link_to project_path(pj.id), class: "pj-card" do %>
+  <div class="pj-list">
+    <%= link_to project_path(pj.id), class: "pj-card" do %>
+      <div class="title_create">
         <div class="pj-card-title">
           <h3><%= pj.title %></h3>
         </div>
         <div class="pj-card-create">
           <p><%= pj.created_at %></p>
-
         </div>
-        <%= link_to 'Edit', edit_project_path(pj.id) %>
-
+      </div>
+      <div class="delete_edit">
+        <%= link_to edit_project_path(pj.id) do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
         <%= link_to edit_project_path(pj.id), method: :delete, data: { confirm: "Are you sure you want to remove #{@project.title}"} do %>
+        
         <div class="center">
 
             <i class="fas fa-trash-alt"></i>
@@ -27,6 +31,7 @@
   <% end %>
 
 </div>
+
 <div class="button-new-project">
   <div id="new-project"><%= icon('fas', 'plus-circle')%></div>
   <%= simple_form_for @project, remote: true do |f| %>
@@ -35,4 +40,5 @@
       <%= f.button :submit, "Create", class: "btn-create btn px-5" %>
     </div>
   <% end %>
+</div>
 </div>

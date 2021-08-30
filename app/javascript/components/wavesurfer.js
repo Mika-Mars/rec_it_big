@@ -21,14 +21,11 @@ const initWavesurfer = () => {
         barWidth: 3,
         barHeight: 1,
         barGap: 1,
-        backend: 'MediaElement'
-        height: 1500,
         progressColor: 'white',
         backend: 'MediaElement',
         autoCenter: true,
         responsive: true,
         scrollParent: true,
-
       });
       play_wave.addEventListener("click", (event) => {
         const isPlaying = event.currentTarget.dataset.playing === "true";
@@ -38,11 +35,10 @@ const initWavesurfer = () => {
         if (isPlaying) {
           event.currentTarget.dataset.playing = "false";
           wave_surfer.pause();
-          // pauseIcon.classList.add("d-none");
-          // playIcon.classList.remove("d-none");
+      
           playIcon.classList.remove("fa-pause");
           playIcon.classList.add("fa-play");
-          
+
         } else {
           event.currentTarget.dataset.playing = "true";
           wave_surfer.play();
@@ -51,9 +47,16 @@ const initWavesurfer = () => {
         }
 
       });
-      
+
       stop_wave.addEventListener("click", (event) => {
-        wave_surfer.stop();
+        const isPlaying = event.currentTarget.dataset.playing === "true";
+        const playIcon = document.querySelector("#play-icon");
+        const pauseIcon = document.querySelector("#pause-icon")
+          event.currentTarget.dataset.playing = "true";
+          wave_surfer.stop();
+          playIcon.classList.remove("fa-pause");
+          playIcon.classList.add("fa-play");
+
       });
       wave_surfer.load(container.dataset.instru);
 
