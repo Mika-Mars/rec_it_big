@@ -21,14 +21,11 @@ const initWavesurfer = () => {
         barWidth: 3,
         barHeight: 1,
         barGap: 1,
-        backend: 'MediaElement'
-        height: 1500,
         progressColor: 'white',
         backend: 'MediaElement',
         autoCenter: true,
         responsive: true,
         scrollParent: true,
-
       });
       play_wave.addEventListener("click", (event) => {
         const isPlaying = event.currentTarget.dataset.playing === "true";
