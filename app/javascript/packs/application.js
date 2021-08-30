@@ -30,6 +30,7 @@ import { addNewSong } from '../components/modal';
 import { initWavesurfer } from '../components/wavesurfer';
 import { getAudio } from '../components/get_audio';
 import { editProject } from "../components/edit_project";
+import { initNoteAutoSave } from '../components/note';
 
 document.addEventListener('turbolinks:load', () => {
   initWavesurfer();
@@ -37,4 +38,5 @@ document.addEventListener('turbolinks:load', () => {
   addNewSong();
   addNewProject();
   editProject();
+  initNoteAutoSave();
 });
