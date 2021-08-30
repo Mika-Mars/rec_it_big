@@ -26,6 +26,7 @@
     align-items: center;
     color: #ECE9E6;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
 
 .backtoprojectarrow {
   color: #167FFB;
@@ -66,8 +67,8 @@
 $wave_width: 75px;
 .instrumental{
     width: $wave_width;
-    margin: 10px 5px 10px 10px;
-    height: 62vh;
+    margin: 25px 5px 10px 10px;
+    height: 80vh;
 
 }
 
@@ -122,9 +123,8 @@ $wave_width: 75px;
     justify-content: center;
     width: 100%;
     box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
-    height: 62.2vh;
+    height: 100%;
     border-radius: 37.5px 37.5px 5px 5px;
-    width: 100%;
 }
 .lecture{
     width: 100%;
@@ -180,4 +180,3 @@ width: $wave_width;
   box-shadow: 0 0px 10px rgba(138, 34, 120, 0.5);
   border-color: rgba(138, 34, 120, 0.5);
 }
-
