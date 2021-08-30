@@ -2,8 +2,12 @@ import WaveSurfer from 'wavesurfer.js';
 
 const initWavesurfer = () => {
   const play_wave = document.querySelector("#btn_play");
-  if (play_wave) {
-    const container = document.querySelector("#waveform");
+  const stop_wave = document.getElementById("btn_stop");
+  const container = document.querySelector("#waveform");
+  const voices = document.querySelectorAll(".voices");
+
+  if (container) {
+
     if (container.dataset.instru) {
       const pause_wave = document.getElementById("btn_pause");
       const stop_wave = document.getElementById("btn_stop");
@@ -17,6 +21,7 @@ const initWavesurfer = () => {
         barWidth: 3,
         barHeight: 1,
         barGap: 1,
+        backend: 'MediaElement'
         height: 1500,
         progressColor: 'white',
         backend: 'MediaElement',
@@ -26,11 +31,27 @@ const initWavesurfer = () => {
 
       });
       play_wave.addEventListener("click", (event) => {
-        wave_surfer.play();
+        const isPlaying = event.currentTarget.dataset.playing === "true";
+        const pauseIcon = document.querySelector("#pause-icon")
+        const playIcon = document.querySelector("#play-icon")
+
+        if (isPlaying) {
+          event.currentTarget.dataset.playing = "false";
+          wave_surfer.pause();
+          // pauseIcon.classList.add("d-none");
+          // playIcon.classList.remove("d-none");
+          playIcon.classList.remove("fa-pause");
+          playIcon.classList.add("fa-play");
+          
+        } else {
+          event.currentTarget.dataset.playing = "true";
+          wave_surfer.play();
+          playIcon.classList.remove("fa-play");
+          playIcon.classList.add("fa-pause");
+        }
+
       });
-      pause_wave.addEventListener("click", (event) => {
-        wave_surfer.pause();
-      });
+      
       stop_wave.addEventListener("click", (event) => {
         wave_surfer.stop();
       });

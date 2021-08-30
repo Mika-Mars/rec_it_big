@@ -34,14 +34,12 @@
         <div id="waveform" data-instru="<%= instru %>">
         </div>
         <div class="lecture">
-          <button class="button_pp">
-            <input type="button" class="wave_btn" id="btn_pause" value=""><i class="fas fa-pause"></i></input>
+          
+          <button class="button_pp wave_btn" id="btn_play" data-playing="false">
+         <i id="play-icon" class="fas fa-play"></i>
           </button>
-          <button class="button_pp">
-            <input type="button" class="wave_btn" id="btn_play" value=""><i class="fas fa-play"></i></input>
-          </button>
-          <button class="btn_stop">
-            <input type="button" class="wave_stop" id="btn_stop" value=""><i class="fas fa-stop"></i></input>
+          <button class="btn_stop wave_stop" id="btn_stop">
+            <i class="fas fa-stop"></i>
           </button>
         </div>
       </div>
