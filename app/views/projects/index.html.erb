@@ -6,7 +6,7 @@
   </div>
   <% @projects.each do |pj| %>
   <div class="pj-list">
-    <%= link_to project_path(pj.id), class: "pj-card" do %>
+    <%= link_to @project, class: "pj-card" do %>
       <div class="title_create">
         <div class="pj-card-title">
           <h3><%= pj.title %></h3>
@@ -16,21 +16,22 @@
         </div>
       </div>
       <div class="delete_edit">
-        <%= link_to edit_project_path(pj.id) do %>
-          <i class="fas fa-edit"></i>
-        <% end %>
-        <%= link_to edit_project_path(pj.id), method: :delete, data: { confirm: "Are you sure you want to remove #{@project.title}"} do %>
-
-        <%# <div class="center"> %>
-
-            <i class="fas fa-trash-alt"></i>
+        <div id="edit_title">
+          <%= icon('fas', 'edit')%>
+        </div>
+        <%= simple_form_for project_path(pj.id), remote: true do |f| %>
+          <div id="form-edit" class="containeur-edit-project hidden">
+            <%= f.input :title, label: "Project's title:", error: 'Title is mandatory, enter one please'%>
+            <%= f.button :submit, "Edit", class: "btn-edit btn px-5" %>
           </div>
         <% end %>
+        <%= link_to edit_project_path(pj.id), method: :delete, data: { confirm: "Are you sure you want to remove #{@project.title}"} do %>
+            <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </div>
       <% end %>
-    </div>
-  <% end %>
-
-</div>
+  </div>
+      <% end %>
 
 <div class="button-new-project">
   <div id="new-project"><%= icon('fas', 'plus-circle')%></div>
