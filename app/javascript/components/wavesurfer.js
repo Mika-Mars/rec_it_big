@@ -39,7 +39,7 @@ const initWavesurfer = () => {
           // playIcon.classList.remove("d-none");
           playIcon.classList.remove("fa-pause");
           playIcon.classList.add("fa-play");
-          
+
         } else {
           event.currentTarget.dataset.playing = "true";
           wave_surfer.play();
@@ -48,7 +48,7 @@ const initWavesurfer = () => {
         }
 
       });
-      
+
       stop_wave.addEventListener("click", (event) => {
         wave_surfer.stop();
       });
