@@ -8,12 +8,23 @@
   color: white;
   min-height: 100vh;
 }
+.pj-list{
+  display: flex;
+  flex-flow: row nowrap;
 
-.pj-list {
+}
+
+.title_create {
   display: flex;
   align-items: center;
   flex-direction: column;
-  position: relative;
+  justify-content: space-around;
+}
+.delete_edit{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .pj-card {
