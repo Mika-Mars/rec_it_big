@@ -2,13 +2,13 @@ import WaveSurfer from 'wavesurfer.js';
 
 const initWavesurfer = () => {
   const play_wave = document.querySelector("#btn_play");
-  const pause_wave = document.getElementById("btn_pause");
-  const stop_wave = document.getElementById("btn_stop");
-  const container = document.querySelector("#waveform");
-  const voices = document.querySelectorAll(".voices");
-
-  if (container) {
+  if (play_wave) {
+    const container = document.querySelector("#waveform");
     if (container.dataset.instru) {
+      const pause_wave = document.getElementById("btn_pause");
+      const stop_wave = document.getElementById("btn_stop");
+      const voices = document.querySelectorAll(".voices");
+
       const wave_surfer = WaveSurfer.create({
         container: '#waveform',
         waveColor: '#B06D9B',
@@ -23,6 +23,7 @@ const initWavesurfer = () => {
         autoCenter: true,
         responsive: true,
         scrollParent: true,
+
       });
       play_wave.addEventListener("click", (event) => {
         wave_surfer.play();
@@ -42,8 +43,7 @@ const initWavesurfer = () => {
           }
         })
       })
-
-      wave_surfer.on('seek', () => {
+      wave_surfer.on('click', () => {
         voices.forEach(voice => {
           if (voice.dataset.start <= wave_surfer.getCurrentTime() && wave_surfer.getCurrentTime() <= voice.dataset.end) {
             voice.currentTime = wave_surfer.getCurrentTime() - voice.dataset.start;
@@ -54,7 +54,6 @@ const initWavesurfer = () => {
           }
         })
       })
-
       wave_surfer.on('pause', () => {
         voices.forEach(voice => {
           voice.pause();
