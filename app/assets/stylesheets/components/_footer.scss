@@ -10,7 +10,6 @@ background-attachment: fixed;;
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   height: 60px;
   padding: 15px;
-  color: rgba(0,0,0,0.3);
   bottom: 0;
   position: fixed;
   width: 100%;
@@ -22,7 +21,7 @@ background-attachment: fixed;;
 }
 #projectsbtn svg{
   font-size: 38px;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
 #footerbtn {
   width: 50px;
@@ -30,13 +29,17 @@ background-attachment: fixed;;
 }
 #footerbtn svg{
   font-size: 40px;
+  color: white;
 }
 #footeraddbtn{
   width: 50px;
   height: 50px;
 }
 #footeraddbtn svg{
-  color: black;
+  color: white;
   font-size: 40px;
   margin-top: 5px;
+}
+#foot-btn-instru{
+  color: rgb(216, 216, 216);
 }
