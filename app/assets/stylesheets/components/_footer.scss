@@ -3,14 +3,10 @@
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(rgba(145, 143, 143, .4), rgba(73, 73, 73, .4));
-background-position: center;
-background-size: cover;
-background-attachment: fixed;;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  background: linear-gradient(rgba(94, 94, 94, 0.8), rgba(32, 32, 32, 0.8));
+  background-attachment: fixed;
   height: 60px;
   padding: 15px;
-  color: rgba(0,0,0,0.3);
   bottom: 0;
   position: fixed;
   width: 100%;
@@ -31,10 +27,7 @@ background-attachment: fixed;;
 #footerbtn svg{
   font-size: 40px;
 }
-#footeraddbtn{
-  width: 50px;
-  height: 50px;
-}
+
 #footeraddbtn svg{
   color: black;
   font-size: 40px;
@@ -46,4 +39,24 @@ background-attachment: fixed;;
   width: 50px;
   height: 10px;
   bottom: 150px;
+  font-size: 150px;
+}
+
+.fa-record-vinyl {
+  color: rgba(138, 34, 120, 0.9);
+  font-size: 50px;
+}
+
+.fa-list-ul {
+  color: rgba(138, 34, 120, 0.9);
+  font-size: 50px;
+}
+
+.fa-plus-circle {
+  color: rgba(138, 34, 120, 0.9);
+  font-size: 50px;
+}
+
+.btn {
+  padding: 0;
 }
