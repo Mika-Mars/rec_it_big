@@ -3,7 +3,7 @@
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(rgba(145, 143, 143, .4), rgba(73, 73, 73, .4));    
+  background: linear-gradient(rgba(145, 143, 143, .4), rgba(73, 73, 73, .4));
 background-position: center;
 background-size: cover;
 background-attachment: fixed;;
@@ -40,6 +40,9 @@ background-attachment: fixed;;
   font-size: 40px;
   margin-top: 5px;
 }
-#foot-btn-instru{
-  color: rgb(216, 216, 216);
+#waveform-micro {
+  position: absolute;
+  width: 50px;
+  height: 10px;
+  bottom: 150px;
 }

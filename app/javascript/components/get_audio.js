@@ -1,5 +1,9 @@
+import WaveSurfer from 'wavesurfer.js';
+import MicrophonePlugin from '../plugins/microphone';
+
 const getAudio = () => {
   const recButton = document.querySelector('#footer-btn-instru');
+  if (recButton) {
   const instruCurrentTime = document.querySelector('#waveform audio');
   let startTime = 0;
   let endTime = 0;
@@ -7,7 +11,20 @@ const getAudio = () => {
     audio: true
   };
   let chunks = [];
-  if (recButton) {
+  const wavesurfer = WaveSurfer.create({
+    container: '#waveform-micro',
+    waveColor: 'white',
+    interact: false,
+    hideScrollbar: false,
+    normalize: true,
+    cursorWidth: 0,
+    barWidth: 2,
+    barHeight: 0,
+    barGap: 1,
+    plugins: [
+      MicrophonePlugin.create()
+    ],
+  });
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
       navigator.mediaDevices.getUserMedia(constraints)
         .then((stream) => {
@@ -15,12 +32,16 @@ const getAudio = () => {
           recButton.addEventListener('click', () => {
             if (mediaRecorder.state === "inactive") {
               mediaRecorder.start();
+              console.log(mediaRecorder.state);
+              wavesurfer.microphone.start();
               startTime = instruCurrentTime.currentTime;
               mediaRecorder.ondataavailable = (e) => {
                 chunks.push(e.data);
               }
             } else {
               mediaRecorder.stop();
+              console.log(mediaRecorder.state);
+              wavesurfer.microphone.stop();
               endTime = instruCurrentTime.currentTime;
             }
           })

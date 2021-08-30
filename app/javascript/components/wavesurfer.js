@@ -7,17 +7,28 @@ const initWavesurfer = () => {
   const voices = document.querySelectorAll(".voices");
 
   if (container) {
+
     if (container.dataset.instru) {
+      const pause_wave = document.getElementById("btn_pause");
+      const stop_wave = document.getElementById("btn_stop");
+      const voices = document.querySelectorAll(".voices");
+
       const wave_surfer = WaveSurfer.create({
         container: '#waveform',
-        waveColor: 'black',
+        waveColor: '#B06D9B',
         vertical: true,
         minCanvasWidth: 220,
-        barWidth: 2,
+        barWidth: 3,
         barHeight: 1,
         barGap: 1,
-        progressColor: '#ECE9E6',
         backend: 'MediaElement'
+        height: 1500,
+        progressColor: 'white',
+        backend: 'MediaElement',
+        autoCenter: true,
+        responsive: true,
+        scrollParent: true,
+
       });
       play_wave.addEventListener("click", (event) => {
         const isPlaying = event.currentTarget.dataset.playing === "true";
@@ -53,8 +64,7 @@ const initWavesurfer = () => {
           }
         })
       })
-
-      wave_surfer.on('seek', () => {
+      wave_surfer.on('click', () => {
         voices.forEach(voice => {
           if (voice.dataset.start <= wave_surfer.getCurrentTime() && wave_surfer.getCurrentTime() <= voice.dataset.end) {
             voice.currentTime = wave_surfer.getCurrentTime() - voice.dataset.start;
@@ -65,7 +75,6 @@ const initWavesurfer = () => {
           }
         })
       })
-
       wave_surfer.on('pause', () => {
         voices.forEach(voice => {
           voice.pause();

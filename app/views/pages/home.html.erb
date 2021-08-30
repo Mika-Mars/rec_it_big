@@ -4,8 +4,8 @@
       <%= link_to projects_path, class: "index-btn" do %>
         <h3>My projects</h3>
       <% end %>
-      <%= link_to projects_path, class: "index-btn" do %>
-        <h3>Another btn</h3>
+      <%= link_to "/projects/#{Project.order(updated_at: :desc).first.id}", class: "index-btn" do %>
+        <h3><%= Project.order(updated_at: :desc).first.title %></h3>
       <% end %>
     </div>
     <div class="sign-out">
