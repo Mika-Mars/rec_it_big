@@ -16,15 +16,15 @@
             <%= f.button :submit, "Upload", class:"btn-upload btn px-5"%>
           <% end %>
         </div>
+      </div>
         <div class="voice-record">
           <% if @project.voice_records.first %>
             <% @project.voice_records.each do |vr| %>
               <% vrc = cloudinary_url(vr.voice.key, :resource_type=>"video") %>
-              <%= audio_tag vrc,:source_types => [:mp3],:controls => true,:poster => false %>
+              <%= audio_tag vrc, data: { start: vr.starting_time, end: vr.ending_time }, class: "voices" %>
             <%end%>
           <%end%>
         </div>
-      </div>
       <div class="wavebody">
         <% if @project.song.attached? %>
           <% instru = cloudinary_url(@project.song.key, :resource_type=>"video") %>
@@ -46,7 +46,7 @@
     </div>
     <div class="textarea">
       <%= simple_form_for [@project, @note] do |f| %>
-        <%# <%= f.input :content, label: false, :as => :text, :input_html => { id: "notes", :rows => 15, :cols => 30, value: "#{@project.note.content}"} %> %>
+        <%= f.input :content, label: false, :as => :text, :input_html => { id: "notes", :rows => 15, :cols => 30, value: "#{@project.note.content}"} %>
         <%= f.submit 'Update note'%>
         <input type="hidden" name="_method" value="patch">
       <% end %>
