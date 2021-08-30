@@ -11,14 +11,6 @@
   </div>
   <div class="pj-body">
     <div class="instrumental">
-      <div class="cloud_formulary modalsong hidden">
-        <div>
-          <%= simple_form_for(@project) do |f| %>
-            <%= f.input :song, as: :file, class:"btn-upload btn px-5" %>
-            <%= f.button :submit, "Upload", class:"btn-upload btn px-5"%>
-          <% end %>
-        </div>
-      </div>
         <div class="voice-record">
           <% if @project.voice_records.first %>
             <% @project.voice_records.each do |vr| %>
@@ -30,6 +22,13 @@
       <div class="wavebody">
         <% if @project.song.attached? %>
           <% instru = cloudinary_url(@project.song.key, :resource_type=>"video") %>
+        <% else %>
+        <div>
+          <%= simple_form_for(@project) do |f| %>
+            <%= f.input :song, as: :file, class:"btn-upload btn px-5" %>
+            <%= f.button :submit, "Upload", class:"btn-upload btn px-5"%>
+          <% end %>
+        </div>
         <%end%>
         <div id="waveform" data-instru="<%= instru %>">
         </div>
