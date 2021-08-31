@@ -13,7 +13,7 @@
   flex-flow: row nowrap;
   height: 85px;
   width: 85%;
-  margin: 8px auto;
+  margin: 24px auto;
   background: rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 4px #FF79CD;
   border: ridge;
@@ -26,10 +26,6 @@
   text-shadow: 0px 1px 5px rgb(192, 16, 133);
   text-decoration: none;
   padding: 7px;
-  &:hover {
-    text-decoration: none;
-    color: rgba(255, 255, 255, 0.7);
-  }
 }
 
 .pj-card{
@@ -37,6 +33,10 @@
   width: 90%;
   text-align: center;
   text-shadow: .5px .5px 1px rgba(136, 136, 136, 0.5);
+  &:hover {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+  }
 }
 .title_create {
   display: flex;
@@ -51,12 +51,13 @@
   justify-content: space-between;
   color: white;
   width: 10%;
-  padding-bottom: 10px;
+  padding-bottom: 8px;
 }
 
 .pj-list i::before{
   color: white;
-  font-size: 15px;
+  font-size: 14px;
+  text-shadow: .5px .5px 1px rgba(255, 255, 255, 0.5);
 }
 
 .pj-card-title {
@@ -77,8 +78,7 @@
 .pj-card-create {
   display: flex;
   justify-content: center;
-  margin: 0px;
-  padding-top: 4px;
+  padding-bottom: 20px;
 }
 
 #backtohome {
@@ -93,4 +93,42 @@ i.fas.fa-plus-circle{
   color: rgb(211, 211, 211);
   opacity: .7;
 text-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+.modal-edit{
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+width: 100vw;
+height: 100vh;
+background: linear-gradient(150deg, rgba(44, 44, 44, .8) 0%, rgba(46, 46, 46, .7) 35%, rgba(59, 14, 52, .5) 100%);  transition: opacity .3s ease;
+}
+
+.open-btn{
+  background: none;
+  border: 0;
+  box-shadow: none;
+}
+#form-edit{
+  height: 30vh;
+  width: 70vw;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+#form-edit input{
+  width: 100%;
+}
+#form-edit label{
+  padding-bottom: 20px;
+}
+#form-edit .btn{
+  background-color: #FF79CD;
+  padding: 10px 25px;
+  width: 40%;
 }
