@@ -48,6 +48,10 @@ const initWavesurfer = () => {
           playIcon.classList.remove("fa-play");
           playIcon.classList.add("fa-pause");
           voices.forEach(voice => {
+            if (voice.dataset.start <= audioInstru.currentTime && audioInstru.currentTime <= voice.dataset.end) {
+              voice.currentTime = audioInstru.currentTime - voice.dataset.start;
+              voice.play();
+            }
             if (voice.dataset.start >= audioInstru.currentTime) {
               const id = setTimeout(() => {
                 voice.play();
@@ -59,36 +63,11 @@ const initWavesurfer = () => {
       });
       stop_wave.addEventListener("click", (event) => {
         wave_surfer.stop();
-        const isPlaying = event.currentTarget.dataset.playing === "true";
         const playIcon = document.querySelector("#play-icon");
-        const pauseIcon = document.querySelector("#pause-icon")
-          event.currentTarget.dataset.playing = "true";
-          wave_surfer.stop();
-          playIcon.classList.remove("fa-pause");
-          playIcon.classList.add("fa-play");
-
-      });
-      wave_surfer.load(container.dataset.instru);
-
-      wave_surfer.on('audioprocess', () => {
-        voices.forEach(voice => {
-          if (voice.dataset.start == Math.round(wave_surfer.getCurrentTime())) {
-            voice.play();
-          }
-        })
-      })
-      wave_surfer.on('click', () => {
-        voices.forEach(voice => {
-          if (voice.dataset.start <= wave_surfer.getCurrentTime() && wave_surfer.getCurrentTime() <= voice.dataset.end) {
-            voice.currentTime = wave_surfer.getCurrentTime() - voice.dataset.start;
-            voice.play();
-          } else {
-            voice.pause();
-            voice.currentTime = 0;
-          }
-        })
-      })
-      wave_surfer.on('pause', () => {
+        event.currentTarget.dataset.playing = "true";
+        wave_surfer.stop();
+        playIcon.classList.remove("fa-pause");
+        playIcon.classList.add("fa-play");
         voices.forEach(voice => {
           voice.pause();
           voice.currentTime = 0;
