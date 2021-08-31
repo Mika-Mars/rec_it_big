@@ -11,9 +11,33 @@
 .pj-list{
   display: flex;
   flex-flow: row nowrap;
-
+  height: 85px;
+  width: 85%;
+  margin: 8px auto;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 4px #FF79CD;
+  border: ridge;
+  border-width: 4px;
+  border-color: rgba(138, 34, 120, 0.5);
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  text-shadow: 0px 1px 5px rgb(192, 16, 133);
+  text-decoration: none;
+  padding: 7px;
+  &:hover {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+  }
 }
 
+.pj-card{
+  color: white;
+  width: 90%;
+  text-align: center;
+  text-shadow: .5px .5px 1px rgba(136, 136, 136, 0.5);
+}
 .title_create {
   display: flex;
   align-items: center;
@@ -25,37 +49,26 @@
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
+  color: white;
+  width: 10%;
+  padding-bottom: 10px;
 }
 
-.pj-card {
-  height: 85px;
-  width: 85%;
-  margin: 8px;
-  background: rgba(0, 0, 0, 0.5);
-  box-shadow: 0 0 4px rgba(83, 34, 59, 0.836);
-  border: ridge;
-  border-width: 4px;
-  border-color: rgba(138, 34, 120, 0.5);
-  border-radius: 8px;
-  text-decoration: none;
-  text-align: center;
+.pj-list i::before{
   color: white;
-  text-shadow: 0px 1px 4px rgb(192, 16, 133);
-  text-decoration: none;
-  &:hover {
-    text-decoration: none;
-    color: rgba(255, 255, 255, 0.7);
-  }
+  font-size: 15px;
 }
 
 .pj-card-title {
   font-size: x-small;
-  padding-left: 8px;
   margin: 0px;
+  width: 95%;
 }
 
 .pj-card-title h3{
   text-overflow: ellipsis;
+  width: 98%;
+  padding-left:5px ;
   overflow: hidden;
   white-space: nowrap;
   font-family: 'Quicksand', sans-serif;
@@ -74,10 +87,10 @@
   font-size: 30px;
   margin: 16px 0 12px 16px;
 }
-.center{
-  position: absolute;
-  bottom: 17%;
-  right: 10%;
-  font-size: 14px;
-  color: rgb(202, 202, 202);
+
+
+i.fas.fa-plus-circle{
+  color: rgb(211, 211, 211);
+  opacity: .7;
+text-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }

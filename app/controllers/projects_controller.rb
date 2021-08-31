@@ -39,7 +39,7 @@ class ProjectsController < ApplicationController
 
   def notes
     @project = Project.find(params[:project_id])
-    @project.note.content = params[:note][:content]
+    @project.note.content = params[:note][:content].strip
     @project.note.save!
     redirect_to project_path(@project)
   end
