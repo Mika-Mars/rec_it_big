@@ -15,7 +15,7 @@ const getAudio = () => {
     container: '#waveform-micro',
     waveColor: 'white',
     interact: false,
-    hideScrollbar: false,
+    hideScrollbar: true,
     normalize: true,
     cursorWidth: 0,
     barWidth: 2,

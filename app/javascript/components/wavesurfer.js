@@ -7,12 +7,14 @@ const initWavesurfer = () => {
       const play_wave = document.querySelector("#btn_play");
       const stop_wave = document.getElementById("btn_stop");
       const voices = document.querySelectorAll(".voices");
+      let arrayId = [];
 
       const wave_surfer = WaveSurfer.create({
         container: '#waveform',
         waveColor: '#B06D9B',
         vertical: true,
         minCanvasWidth: 220,
+        hideScrollbar: true,
         barWidth: 3,
         barHeight: 1,
         barGap: 1,
@@ -28,6 +30,7 @@ const initWavesurfer = () => {
         const playIcon = document.querySelector("#play-icon")
         const audioInstru = document.querySelector('#waveform audio');
 
+
         if (isPlaying) {
           event.currentTarget.dataset.playing = "false";
           wave_surfer.pause();
@@ -37,6 +40,8 @@ const initWavesurfer = () => {
             voice.pause();
             voice.currentTime = 0;
           })
+          arrayId.forEach(clearTimeout);
+          arrayId = [];
         } else {
           event.currentTarget.dataset.playing = "true";
           wave_surfer.play();
@@ -44,12 +49,10 @@ const initWavesurfer = () => {
           playIcon.classList.add("fa-pause");
           voices.forEach(voice => {
             if (voice.dataset.start >= audioInstru.currentTime) {
-              setInterval(() => {
-                voice.start();
-              }, audioInstru.currentTime - voice.dataset.start);
-              if (voice.dataset.start <= audioInstru.currentTime && audioInstru.currentTime <= voice.dataset.end) {
-
-              }
+              const id = setTimeout(() => {
+                voice.play();
+              }, (voice.dataset.start - audioInstru.currentTime) * 1000);
+              arrayId.push(id);
             }
           })
         }
@@ -60,20 +63,22 @@ const initWavesurfer = () => {
           voice.pause();
           voice.currentTime = 0;
         })
+        arrayId.forEach(clearTimeout);
+        arrayId = [];
       });
 
       // A GARDER SVP
 
-      // wave_surfer.on('click', () => {
-        //   voices.forEach(voice => {
-      //     if (voice.dataset.start <= wave_surfer.getCurrentTime() && wave_surfer.getCurrentTime() <= voice.dataset.end) {
-      //       voice.currentTime = wave_surfer.getCurrentTime() - voice.dataset.start;
-      //       voice.play();
-      //     } else {
-      //       voice.pause();
-      //       voice.currentTime = 0;
-      //     }
-      //   })
+      //  wave_surfer.on('seek', () => {
+      //    voices.forEach(voice => {
+      //      if (voice.dataset.start <= audioInstru.currentTime && audioInstru.currentTime <= voice.dataset.end) {
+      //        voice.currentTime = audioInstru.currentTime - voice.dataset.start;
+      //        voice.play();
+      //      } else {
+      //        voice.pause();
+      //        voice.currentTime = 0;
+      //      }
+      //    })
       // })
     }
   }
