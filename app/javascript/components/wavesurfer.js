@@ -75,20 +75,6 @@ const initWavesurfer = () => {
         arrayId.forEach(clearTimeout);
         arrayId = [];
       });
-
-      // A GARDER SVP
-
-      //  wave_surfer.on('seek', () => {
-      //    voices.forEach(voice => {
-      //      if (voice.dataset.start <= audioInstru.currentTime && audioInstru.currentTime <= voice.dataset.end) {
-      //        voice.currentTime = audioInstru.currentTime - voice.dataset.start;
-      //        voice.play();
-      //      } else {
-      //        voice.pause();
-      //        voice.currentTime = 0;
-      //      }
-      //    })
-      // })
     }
   }
 }
