@@ -75,10 +75,8 @@ $wave_width: 75px;
     display: flex;
     justify-content: center;
     height: calc(98% - #{$wave_width});
-    margin-top: 5px;
     border-radius: 0 0 25% 25%;
     overflow: hidden;
-    background-image: linear-gradient(to right, #a5a5a5 0%, #ffffff 31%, #ffffff 71%, #a5a5a5 100%);
 }
 
 #waveform canvas{
@@ -189,10 +187,10 @@ width: $wave_width;
   visibility: hidden;
 }
 
-label {
+#label-inst {
     color: rgba(0, 0, 0, 0.4);
     // border: 1px solid rgba(138, 34, 120, 0.5);
-    padding: 45px 49px 356px 15px;
+    padding: 45px 49px 380px 15px;
     border-radius: 0 0 30px 30px;
     background-color: rgba(0, 0, 0, 0.4);
     // background-image: linear-gradient(to right, #a5a5a5 0%, #ffffff 31%, #ffffff 71%, #a5a5a5 100%);
