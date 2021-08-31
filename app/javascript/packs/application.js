@@ -31,6 +31,7 @@ import { initWavesurfer } from '../components/wavesurfer';
 import { getAudio } from '../components/get_audio';
 import { editProject } from "../components/edit_project";
 import { initNoteAutoSave } from '../components/note';
+import { submitAutoInstru } from '../components/submit_auto_instru';
 
 document.addEventListener('turbolinks:load', () => {
   initWavesurfer();
@@ -39,4 +40,5 @@ document.addEventListener('turbolinks:load', () => {
   addNewProject();
   editProject();
   initNoteAutoSave();
+  submitAutoInstru();
 });

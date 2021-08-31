@@ -73,8 +73,8 @@ $wave_width: 75px;
 
  #waveform {
     display: flex;
+    justify-content: center;
     height: calc(98% - #{$wave_width});
-    margin-top: 0px;
     border-radius: 0 0 25% 25%;
     overflow: hidden;
 }
@@ -90,7 +90,7 @@ $wave_width: 75px;
 
 .textarea {
   width: 75%;
-  height: 96%;
+  height:79.5vh;
   box-shadow: 0 1px 4px rgba(255, 255, 255, 0.3);
   margin: 10px 10px 10px 5px;
   display: flex;
@@ -182,3 +182,29 @@ width: $wave_width;
   box-shadow: 0 0px 10px rgba(138, 34, 120, 0.5);
   border-color: rgba(138, 34, 120, 0.5);
 }
+
+.up-instru {
+  visibility: hidden;
+}
+
+#label-inst {
+    color: rgba(0, 0, 0, 0.4);
+    // border: 1px solid rgba(138, 34, 120, 0.5);
+    padding: 45px 49px 380px 15px;
+    border-radius: 0 0 30px 30px;
+    background-color: rgba(0, 0, 0, 0.4);
+    // background-image: linear-gradient(to right, #a5a5a5 0%, #ffffff 31%, #ffffff 71%, #a5a5a5 100%);
+    font-weight: 700;
+    text-align: center;
+    margin-left: 0px;
+    margin-bottom: -33px;
+}
+// #form-submit-instru {
+//     color: black;
+//     border: 1px solid rgba(138, 34, 120, 0.5);
+//     padding: 6px;
+//     border-radius: 0 0 30px 30px;
+//     background-image: linear-gradient(to right, #a5a5a5 0%, #ffffff 31%, #ffffff 71%, #a5a5a5 100%);
+//     font-weight: 700;
+//     text-align: center;
+// }
