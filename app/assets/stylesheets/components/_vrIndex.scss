@@ -1,0 +1,39 @@
+.vr-index {
+  min-height: 610px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  bottom: 605px;
+  right: -50px;
+  background-color: rgb(236, 236, 236);
+  border: 1px solid purple;
+  border-radius: 8px;
+  z-index: 10;
+}
+
+.vr-card {
+  width: 250px;
+  height: 64px;
+  padding: 16px;
+  background-color: lightgrey;
+  border: 1px solid grey;
+  margin: 12px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.vr-title {
+
+}
+.vr-title p {
+  margin: 0;
+}
+
+.vr-switch {
+
+}
