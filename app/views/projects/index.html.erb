@@ -6,7 +6,7 @@
   </div>
   <% @projects.each do |pj| %>
   <div class="pj-list">
-    <%= link_to @project, class: "pj-card" do %>
+    <%= link_to pj, class: "pj-card" do %>
       <div class="title_create">
         <div class="pj-card-title">
           <h3><%= pj.title %></h3>
