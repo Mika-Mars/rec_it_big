@@ -6,7 +6,8 @@
   background-size: cover;
   background-attachment: fixed;
   color: white;
-  min-height: 100vh;
+  padding: 24px 0;
+  padding-bottom: 60px;
 }
 .pj-list{
   display: flex;
@@ -56,7 +57,7 @@
 
 .pj-list i::before{
   color: white;
-  font-size: 14px;
+  font-size: 12px;
   text-shadow: .5px .5px 1px rgba(255, 255, 255, 0.5);
 }
 
@@ -114,21 +115,37 @@ background: linear-gradient(150deg, rgba(44, 44, 44, .8) 0%, rgba(46, 46, 46, .7
 #form-edit{
   height: 30vh;
   width: 70vw;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 5px;
+  background: linear-gradient(150deg, rgba(44, 44, 44, .9) 0%, rgba(46, 46, 46, .8) 35%, rgba(59, 14, 52, 0.7) 100%);
+  border: outset;
+  border-width: 4px;
+  border-color: rgba(255, 255, 255, 0.7);
+
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
 }
 #form-edit input{
-  width: 100%;
+  width: 85%;
+  margin: 0 auto;
 }
 #form-edit label{
-  padding-bottom: 20px;
+  background: none;
+  color: white;
+  padding: 0;
+  margin: 15px 0;
+  text-shadow:#FF79CD 1px 0 2px;
 }
 #form-edit .btn{
-  background-color: #FF79CD;
+  background-color: rgba(138, 34, 121, 0.7);
   padding: 10px 25px;
+  border-color: rgba(15, 15, 15, 0.7);
   width: 40%;
+  border: outset;
+  border-radius: 8px;
+  border-width: 2px;
+  color: white;
+  text-shadow:#494949 1px 0 5px;
+  margin-bottom: 8px;
 }
