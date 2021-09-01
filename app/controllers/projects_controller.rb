@@ -4,6 +4,7 @@ class ProjectsController < ApplicationController
   def show
     @voice_record = VoiceRecord.new
     @note = Note.new
+    @voicerecords = @project.voice_records
   end
 
   def index
