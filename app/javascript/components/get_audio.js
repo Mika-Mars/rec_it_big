@@ -4,7 +4,6 @@ import MicrophonePlugin from '../plugins/microphone';
 const getAudio = () => {
   const recButton = document.querySelector('#footer-btn-instru');
   if (recButton) {
-  const instruCurrentTime = document.querySelector('#waveform audio');
   let startTime = 0;
   let endTime = 0;
   const constraints = {
@@ -29,7 +28,9 @@ const getAudio = () => {
       navigator.mediaDevices.getUserMedia(constraints)
         .then((stream) => {
           const mediaRecorder = new MediaRecorder(stream);
+          const instruCurrentTime = document.querySelector('#waveform audio');
           recButton.addEventListener('click', () => {
+            document.getElementById("rec-btn").classList.toggle('fa-record-vinyl-playing');
             if (mediaRecorder.state === "inactive") {
               mediaRecorder.start();
               console.log(mediaRecorder.state);
