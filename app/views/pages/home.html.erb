@@ -1,4 +1,4 @@
-<div class="biggy-container">
+<div class="biggy-small">
   <% if user_signed_in? %>
     <div class="logged-btn">
       <%= link_to projects_path, class: "index-btn" do %>
@@ -15,7 +15,6 @@
     </div>
   <% else %>
     <section>
-      <h1>Salam mes kheys bienvenue sur rec it BIG</h1>
       <%= link_to "LOG IN", new_user_session_path, class: "login-btn"%>
       <a class="signup-btn" href="/users/sign_up">or <strong>Sign Up</strong></a>
     </section>

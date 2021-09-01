@@ -12,34 +12,44 @@
   color: antiquewhite;
   font-size: 50px;
 }
-
 .containeur-form-project {
   display: flex;
+  height: 200px;
   position: absolute;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 300px;
-  height: 200px;
-  padding: 8px;
   bottom: 0px;
   right: -400px;
-  background-image: linear-gradient( rgba(102, 9, 71, 0.9),
-                  rgba(0, 0, 0, 0.9));
+  background: linear-gradient(150deg, rgba(44, 44, 44, .9) 0%, rgba(46, 46, 46, .8) 35%, rgba(59, 14, 52, 0.7) 100%);
   border-radius: 4px;
   transition: all 0.6s ease;
   border: ridge;
   border-width: 4px;
-  border-color: rgba(138, 34, 120, 0.5);
+  border-color: rgba(255, 255, 255, 0.7);
   border-radius: 8px;
   transition: all 0.6s ease-in-out;
 }
+.containeur-form-project label{
+  background: none;
+  color: white;
+  padding: 0;
+  margin: 15px 0;
+  text-shadow:#FF79CD 1px 0 2px;
+}
 
-.btn-create {
+.containeur-form-project .btn {
   justify-content: center;
   background-color: rgba(138, 34, 121, 0.7);
   border: outset;
-  border-width: 4px;
-  border-color: rgba(15, 15, 15, 0.7);
+  border-width: 2px;
+  border-color: rgba(255, 255, 255, 0.7);
   border-radius: 8px;
+  text-shadow:#494949 1px 0 5px;
+  width: 40%;
+  padding: 7px 25px;
+  margin-top: 10px;
+
+  color: white;
 }

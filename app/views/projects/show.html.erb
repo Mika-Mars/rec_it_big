@@ -23,12 +23,9 @@
         <% if @project.song.attached? %>
           <% instru = cloudinary_url(@project.song.key, :resource_type=>"video") %>
         <% else %>
-        <div>
-          <%= simple_form_for(@project) do |f| %>
-            <%= f.input :song, as: :file, class:"btn-upload btn px-5" %>
-            <%= f.button :submit, "Upload", class:"btn-upload btn px-5"%>
+          <%= simple_form_for @project, html: {id: :'form-submit-instru'}, remote: true do |f| %>
+              <%= f.input :song, as: :file, input_html: {id:"instru", class:"up-instru"}, label:"..", label_html: {id:"label-inst"} %>
           <% end %>
-        </div>
         <%end%>
         <div id="waveform" data-instru="<%= instru %>">
         </div>

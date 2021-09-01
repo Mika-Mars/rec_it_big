@@ -33,6 +33,7 @@ import { editProject } from "../components/edit_project";
 import { initNoteAutoSave } from '../components/note';
 import { togglevr } from "../components/switchbtn";
 import { toggleVrIndex } from "../components/toggle_vr_index";
+import { submitAutoInstru } from '../components/submit_auto_instru';
 
 document.addEventListener('turbolinks:load', () => {
   initWavesurfer();
@@ -43,4 +44,5 @@ document.addEventListener('turbolinks:load', () => {
   initNoteAutoSave();
   togglevr();
   toggleVrIndex();
+  submitAutoInstru();
 });
