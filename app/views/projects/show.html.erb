@@ -44,5 +44,25 @@
       <textarea class="form-control text optional" id="notes" rows="24" cols="33" data-token="<%= form_authenticity_token %>" ><%= @project.note.content.strip %></textarea>
     </div>
   </div>
+  <div class="vr-index">
+    <% @voicerecords.each do |vr| %>
+      <div class="vr-card">
+        <div class="vr-title">
+          <h4><%= vr.title %></h4>
+          <p><%= vr.starting_time %></p>
+        </div>
+        <div class="vr-switch" data-voiceid="<%= vr.id %>">
+          <div class="switch-container">
+            <label for="switch" class="switch-label">
+              <div class="switch-rail" style="background-color: black">
+                <div class="switch-slider">
+                </div>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
   <%= render 'shared/footer' unless @disable_nav %>
 </div>
