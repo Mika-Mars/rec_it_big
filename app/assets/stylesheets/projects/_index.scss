@@ -44,6 +44,8 @@
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
+  height: 100%;
+  
 }
 .delete_edit{
   display: flex;
@@ -79,7 +81,9 @@
 .pj-card-create {
   display: flex;
   justify-content: center;
-  padding-bottom: 20px;
+}
+.pj-card-create p {
+  margin-bottom: 0;
 }
 
 #backtohome {
@@ -119,7 +123,7 @@ background: linear-gradient(150deg, rgba(44, 44, 44, .8) 0%, rgba(46, 46, 46, .7
   border: outset;
   border-width: 4px;
   border-color: rgba(255, 255, 255, 0.7);
-
+  position: relative;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
@@ -129,6 +133,7 @@ background: linear-gradient(150deg, rgba(44, 44, 44, .8) 0%, rgba(46, 46, 46, .7
 #form-edit input{
   width: 85%;
   margin: 0 auto;
+  text-overflow: ellipsis;
 }
 #form-edit label{
   background: none;
@@ -139,7 +144,7 @@ background: linear-gradient(150deg, rgba(44, 44, 44, .8) 0%, rgba(46, 46, 46, .7
 }
 #form-edit .btn{
   background-color: rgba(138, 34, 121, 0.7);
-  padding: 10px 25px;
+  padding: 7px 25px;
   border-color: rgba(15, 15, 15, 0.7);
   width: 40%;
   border: outset;
@@ -148,4 +153,13 @@ background: linear-gradient(150deg, rgba(44, 44, 44, .8) 0%, rgba(46, 46, 46, .7
   color: white;
   text-shadow:#494949 1px 0 5px;
   margin-bottom: 8px;
+}
+.edit_go-back{
+  position: absolute;
+  margin: 0;
+  top: 0px;
+  left: 17px;
+}
+.edit_go-back i#backtohome.fas.fa-arrow-left{
+  margin: 0;
 }

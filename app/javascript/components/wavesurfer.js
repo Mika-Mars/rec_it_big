@@ -62,7 +62,6 @@ const initWavesurfer = () => {
         }
       });
       stop_wave.addEventListener("click", (event) => {
-        wave_surfer.stop();
         const playIcon = document.querySelector("#play-icon");
         event.currentTarget.dataset.playing = "true";
         wave_surfer.stop();
