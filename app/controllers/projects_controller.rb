@@ -28,8 +28,13 @@ class ProjectsController < ApplicationController
 
   def update
     @project = Project.find(params[:id])
+    if params[:next_action]
+      next_path = params[:next_action]
+    else 
+      next_path = project_path(@project)
+    end
     @project.update(project_params)
-    redirect_to project_path
+    redirect_to next_path
   end
 
   def destroy
