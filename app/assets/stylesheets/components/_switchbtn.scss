@@ -1,7 +1,5 @@
 .switch-container{
-  #switch{
-    display: none;
-  }
+
   .switch-label{
     position: relative;
     cursor: pointer;
@@ -10,7 +8,7 @@
       transition: all 0.2s ease-in-out;
       width: 60px;
       height: 30px;
-      background: #e3342f;
+      background-color: black;
       border-radius: 50px;
       overflow: hidden;
       .switch-slider{
@@ -25,14 +23,8 @@
       }
     }
   }
-  #switch.checked + .switch-label {
-    .switch-rail{
-      transition: all 0.2s ease-in-out;
-      background: #38c172;
-      .switch-slider{
-        transition: all 0.2s ease-in-out;
-        transform: translateX(30px);
-      }
-    }
+  .slide{
+    transition: all 0.2s ease-in-out;
+    transform: translateX(30px);
   }
 }

@@ -1,13 +1,16 @@
 const togglevr = () => {
-  const switchbtns = document.querySelectorAll(".vr-switch");
   const switchrails = document.querySelectorAll(".switch-rail");
-  switchrails.forEach(switchrail => {
-    switchrail.addEventListener('click', (event) => {
-      console.dir(event.currentTarget);
-      const switchcard = event.currentTarget
-      switchcard.style.backgroundColor = "purple"
-    })
-  });
+  if (switchrails.length > 0) {
+    switchrails.forEach(switchrail => {
+      switchrail.addEventListener('click', (event) => {
+        const switchcard = event.currentTarget
+        const switchbtns = switchcard.querySelector(".switch-slider");
+        let color = switchcard.style.backgroundColor;
+        color = switchcard.style.backgroundColor = color === 'black' ? 'purple' : 'black';
+        color === 'black' ? switchbtns.classList.remove("slide") : switchbtns.classList.add("slide");
+      })
+    });
+  }
 }
 
 export { togglevr }
