@@ -7,6 +7,7 @@ const initWavesurfer = () => {
       const play_wave = document.querySelector("#btn_play");
       const stop_wave = document.querySelector("#btn_stop");
       const voices = document.querySelectorAll(".voices");
+      const rec = document.querySelector('#rec');
       let arrayId = [];
 
       const wave_surfer = WaveSurfer.create({
@@ -30,6 +31,7 @@ const initWavesurfer = () => {
         const playIcon = document.querySelector("#play-icon")
         const audioInstru = document.querySelector('#waveform audio');
 
+
         if (isPlaying) {
           event.currentTarget.dataset.playing = "false";
           wave_surfer.pause();
@@ -50,10 +52,19 @@ const initWavesurfer = () => {
             if (voice.dataset.start <= audioInstru.currentTime && audioInstru.currentTime <= voice.dataset.end) {
               voice.currentTime = audioInstru.currentTime - voice.dataset.start;
               voice.play();
+              rec.classList.toggle("voice-disable");
+              rec.classList.toggle("voice-active");
             }
             if (voice.dataset.start >= audioInstru.currentTime) {
               const id = setTimeout(() => {
                 voice.play();
+                rec.classList.toggle("voice-disable");
+                rec.classList.toggle("voice-active");
+                const voiceId = setTimeout(() => {
+                  rec.classList.toggle("voice-disable");
+                  rec.classList.toggle("voice-active");
+                }, voice.duration);
+                arrayId.push(voiceId);
               }, ((voice.dataset.start - audioInstru.currentTime) * 1000) - 500);
               arrayId.push(id);
             }
