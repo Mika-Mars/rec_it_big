@@ -44,6 +44,8 @@
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
+  height: 100%;
+  
 }
 .delete_edit{
   display: flex;
@@ -79,7 +81,9 @@
 .pj-card-create {
   display: flex;
   justify-content: center;
-  padding-bottom: 20px;
+}
+.pj-card-create p {
+  margin-bottom: 0;
 }
 
 #backtohome {
