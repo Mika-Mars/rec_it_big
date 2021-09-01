@@ -24,6 +24,7 @@
           <% instru = cloudinary_url(@project.song.key, :resource_type=>"video") %>
         <% else %>
           <%= simple_form_for @project, html: {id: :'form-submit-instru'}, remote: true do |f| %>
+          <i class="fas fa-cloud-upload-alt"></i>
               <%= f.input :song, as: :file, input_html: {id:"instru", class:"up-instru"}, label:"..", label_html: {id:"label-inst"} %>
           <% end %>
         <%end%>
