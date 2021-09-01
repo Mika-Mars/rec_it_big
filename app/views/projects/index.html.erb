@@ -44,6 +44,11 @@
     <div id="new-project"><%= icon('fas', 'plus-circle')%></div>
     <%= simple_form_for @project, remote: true do |f| %>
       <div id="form-project" class="containeur-form-project">
+        <div class="edit_go-back">
+          <%= link_to projects_path do %>
+            <i class="fas fa-arrow-left" id="backtohome"></i>
+          <% end %>
+        </div>
         <%= f.input :title, label: "Project's title:", error: 'Title is mandatory, enter one please'%>
         <%= f.button :submit, "Create", class: "btn-create btn" %>
       </div>
