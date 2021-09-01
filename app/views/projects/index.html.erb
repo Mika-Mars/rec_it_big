@@ -29,6 +29,7 @@
                 <% end %>
               </div>
               <%= f.input :title, label: "Project's title:", error: 'Title is mandatory, enter one please'%>
+              <input hidden name="next_action" value="<%= projects_path %>"/>
               <%= f.button :submit, "Edit" %>
             </div>
           <% end %>
