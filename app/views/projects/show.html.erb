@@ -24,6 +24,7 @@
           <% instru = cloudinary_url(@project.song.key, :resource_type=>"video") %>
         <% else %>
           <%= simple_form_for @project, html: {id: :'form-submit-instru'}, remote: true do |f| %>
+          <i class="fas fa-cloud-upload-alt"></i>
               <%= f.input :song, as: :file, input_html: {id:"instru", class:"up-instru"}, label:"..", label_html: {id:"label-inst"} %>
           <% end %>
         <%end%>
@@ -45,17 +46,18 @@
     </div>
   </div>
   <div class="vr-index">
-    <% @voicerecords.each do |vr| %>
+    <% @voicerecords.order(created_at: :desc).each do |vr| %>
       <div class="vr-card">
         <div class="vr-title">
           <h4><%= vr.title %></h4>
           <p><%= vr.starting_time %></p>
         </div>
-        <div class="vr-switch" data-voiceid="<%= vr.id %>">
+        <div class="vr-switch">
           <div class="switch-container">
             <label for="switch" class="switch-label">
-              <div class="switch-rail" style="background-color: black">
-                <div class="switch-slider">
+
+              <div data-voiceid="<%= vr.id %>" data-voicetoken="<%= form_authenticity_token %>" class="switch-rail" style="background-color: <%= vr.enabled ? "purple" : "black" %>">
+                <div class="switch-slider <%= vr.enabled ? "" : "slide" %>">
                 </div>
               </div>
             </label>
