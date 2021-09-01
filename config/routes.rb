@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :projects, except: %i[new] do
     patch :notes
-    resources :voice_records, only: %i[create index destroy]
+    resources :voice_records, only: %i[create index update destroy]
   end
 end

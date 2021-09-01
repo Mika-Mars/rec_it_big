@@ -6,8 +6,14 @@ const togglevr = () => {
         const switchcard = event.currentTarget
         const switchbtns = switchcard.querySelector(".switch-slider");
         let color = switchcard.style.backgroundColor;
-        color = switchcard.style.backgroundColor = color === 'black' ? 'purple' : 'black';
-        color === 'black' ? switchbtns.classList.remove("slide") : switchbtns.classList.add("slide");
+        switchcard.style.backgroundColor = color === 'black' ? 'purple' : 'black';
+        switchbtns.classList.toggle("slide");
+        const formData = new FormData();
+        formData.append('authenticity_token', switchrail.dataset.voicetoken);
+        fetch(window.location.href + "/voice_records/" + switchrail.dataset.voiceid, {
+          method: 'PATCH',
+          body: formData
+        });
       })
     });
   }
