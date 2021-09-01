@@ -1,7 +1,7 @@
 <div class="biggy-container">
   <div class="go-back">
     <%= link_to root_path do %>
-      <i class="fas fa-arrow-left" id="backtohome"></i>
+      <i class="fas fa-arrow-left" id="bigbacktohome"></i>
     <% end %>
   </div>
   <% @projects.each do |pj| %>
@@ -29,6 +29,7 @@
                 <% end %>
               </div>
               <%= f.input :title, label: "Project's title:", error: 'Title is mandatory, enter one please'%>
+              <input hidden name="next_action" value="<%= projects_path %>"/>
               <%= f.button :submit, "Edit" %>
             </div>
           <% end %>
@@ -44,6 +45,11 @@
     <div id="new-project"><%= icon('fas', 'plus-circle')%></div>
     <%= simple_form_for @project, remote: true do |f| %>
       <div id="form-project" class="containeur-form-project">
+        <div class="edit_go-back">
+          <%= link_to projects_path do %>
+            <i class="fas fa-arrow-left" id="backtohome"></i>
+          <% end %>
+        </div>
         <%= f.input :title, label: "Project's title:", error: 'Title is mandatory, enter one please'%>
         <%= f.button :submit, "Create", class: "btn-create btn" %>
       </div>

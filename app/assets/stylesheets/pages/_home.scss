@@ -1,4 +1,17 @@
 // Specific CSS for your home-page
+.biggy-small{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  padding: 80px 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.9),
+                  rgba(102, 9, 71, 0.9)),
+                    url("https://i.ibb.co/BZBqVTY/background-biggy.jpg");
+                    background-position: center;
+                    background-size: cover;
+                    background-attachment: fixed;
+}
 section{
   height: 80vh;
   display: flex;
@@ -16,7 +29,6 @@ section h1 {
 .login-btn {
   margin: 32px;
   font-family: 'Quicksand', sans-serif;
-  font-size: 350%;
   color: white;
   font-weight: 700;
   text-shadow: 5px 5px 20px  rgb(229, 250, 243) ;
@@ -28,7 +40,6 @@ section h1 {
 
 .signup-btn {
   font-size: 120%;
-  margin: 32px;
   text-align: left;
   color: white;
   text-shadow: 5px 5px 20px  rgb(229, 250, 243) ;
@@ -79,7 +90,7 @@ section h1 {
 }
 
 .sign-out {
-  margin-top: 24px;
+  margin-top: 44px;
   display: flex;
 
   h2 {
