@@ -23,7 +23,7 @@
         <div id="waveform" data-instru="<%= instru %>">
         </div>
         <div class="lecture">
-          <button class="button_pp wave_btn" id="btn_play" data-playing="false">
+          <button class="button_pp wave_btn" id="btn-play" data-playing="false">
             <i id="play-icon" class="fas fa-play"></i>
           </button>
           <button class="btn_stop wave_stop" data-playing="false" id="btn_stop">
@@ -37,7 +37,7 @@
         <% @project.voice_records.each_with_index do |vr, i| %>
           <% vrc = cloudinary_url(vr.voice.key, :resource_type=>"video") %>
           <%= audio_tag vrc, data: { enabled: vr.enabled, start: vr.starting_time, voiceid: vr.id, end: vr.ending_time }, class: "voices" %>
-          <div id="voice<%= vr.id %>" class="voice-disable">
+          <div id="voice<%= vr.id %>" class="voice-inactive">
             <p><%= i + 1 %></p>
           </div>
         <%end%>

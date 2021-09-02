@@ -234,7 +234,7 @@ width: $wave_width;
   }
 }
 
-.voice-disable {
+.voice-inactive {
   color: white;
   background-color: purple;
   transition: all 0.45s;
@@ -260,6 +260,10 @@ width: $wave_width;
       opacity: 0.5;
     }
   }
+
+.voice-disable {
+  opacity: 0.4;
+}
 
 i.fas.fa-cloud-upload-alt::before{
   color: rgba(255, 255, 255, .5);
