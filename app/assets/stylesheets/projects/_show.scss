@@ -237,12 +237,29 @@ width: $wave_width;
 .voice-inactive {
   color: white;
   background-color: purple;
+  transition: all 0.45s;
 }
 
 .voice-active {
   color: black;
   background-color: whitesmoke;
+  animation-duration: 1.35s;
+  animation-name: clignoter;
+  animation-iteration-count: infinite;
+  transition: all 0.45s;
 }
+
+@keyframes clignoter {
+    from {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+    to {
+      opacity: 0.5;
+    }
+  }
 
 .voice-disable {
   opacity: 0.4;
