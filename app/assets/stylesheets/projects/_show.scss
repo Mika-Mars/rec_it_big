@@ -73,7 +73,7 @@ $wave_width: 75px;
 .instrumental {
   width: $wave_width;
   margin: 25px 5px 10px 10px;
-  height: 78vh;
+  height: 77vh;
 }
 
 #waveform {
@@ -271,4 +271,13 @@ i.fas.fa-cloud-upload-alt::before{
   position: absolute;
   top: 45%;
   left: 17px;
+}
+.wave-time{
+  color: white;
+  text-shadow: 2px 2px 2px black;
+}
+#waveform-time-indicator{
+  position: absolute;
+  bottom: -25px;
+  left: 13.5px;
 }
