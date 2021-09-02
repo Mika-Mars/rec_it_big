@@ -1,8 +1,6 @@
 .vr-index {
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: space-around;
-  align-items: center;
+  display: block;
+ 
   position: absolute;
   border: solid;
   width: 68%;
@@ -15,10 +13,13 @@
   z-index: 10;
   right: -350px;
   transition: all 0.6s ease-in-out;
+  padding: 5px 0;
+  overflow: scroll;
 }
 
 .vr-card {
   height: 84px;
+  margin: 5px auto;
   border-radius: 8px;
   display: flex;
   flex-flow: row nowrap;
