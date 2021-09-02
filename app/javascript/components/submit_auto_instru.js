@@ -9,4 +9,6 @@ const submitAutoInstru = () => {
   }
 }
 
-export { submitAutoInstru }
+export {
+  submitAutoInstru
+}
