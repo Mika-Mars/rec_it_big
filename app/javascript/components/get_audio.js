@@ -29,7 +29,6 @@ const getAudio = () => {
           const instruCurrentTime = document.querySelector('#waveform audio');
           const mediaRecorder = new MediaRecorder(stream);
           recButton.addEventListener('click', () => {
-            console.log("sacha")
             document.getElementById("rec-btn").classList.toggle('fa-record-vinyl-playing');
             if (mediaRecorder.state === "inactive") {
               mediaRecorder.start();
