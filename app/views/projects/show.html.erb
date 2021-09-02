@@ -11,14 +11,6 @@
   </div>
   <div class="pj-body">
     <div class="instrumental">
-        <div class="voice-record">
-          <% if @project.voice_records.first %>
-            <% @project.voice_records.each do |vr| %>
-              <% vrc = cloudinary_url(vr.voice.key, :resource_type=>"video") %>
-              <%= audio_tag vrc, data: { start: vr.starting_time, end: vr.ending_time }, class: "voices" %>
-            <%end%>
-          <%end%>
-        </div>
       <div class="wavebody">
         <% if @project.song.attached? %>
           <% instru = cloudinary_url(@project.song.key, :resource_type=>"video") %>
@@ -31,15 +23,25 @@
         <div id="waveform" data-instru="<%= instru %>">
         </div>
         <div class="lecture">
-
           <button class="button_pp wave_btn" id="btn_play" data-playing="false">
-         <i id="play-icon" class="fas fa-play"></i>
+            <i id="play-icon" class="fas fa-play"></i>
           </button>
-          <button class="btn_stop wave_stop" id="btn_stop">
+          <button class="btn_stop wave_stop" data-playing="false" id="btn_stop">
             <i class="fas fa-stop"></i>
           </button>
         </div>
       </div>
+    </div>
+    <div class="voice-record">
+      <% if @project.voice_records.first %>
+        <% @project.voice_records.each_with_index do |vr, i| %>
+          <% vrc = cloudinary_url(vr.voice.key, :resource_type=>"video") %>
+          <%= audio_tag vrc, data: { start: vr.starting_time, voiceid: vr.id, end: vr.ending_time }, class: "voices" %>
+          <div id="voice<%= vr.id %>" class="voice-disable">
+            <p><%= i + 1 %></p>
+          </div>
+        <%end%>
+      <%end%>
     </div>
     <div class="textarea">
       <textarea class="form-control text optional" id="notes" rows="24" cols="33" data-token="<%= form_authenticity_token %>" ><%= @project.note.content.strip %></textarea>

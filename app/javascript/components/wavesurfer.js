@@ -36,8 +36,11 @@ const initWavesurfer = () => {
           playIcon.classList.remove("fa-pause");
           playIcon.classList.add("fa-play");
           voices.forEach(voice => {
+            const test = document.querySelector(`#voice${voice.dataset.voiceid}`);
             voice.pause();
             voice.currentTime = 0;
+            test.classList.add("voice-disable");
+            test.classList.remove("voice-active");
           })
           arrayId.forEach(clearTimeout);
           arrayId = [];
@@ -47,28 +50,46 @@ const initWavesurfer = () => {
           playIcon.classList.remove("fa-play");
           playIcon.classList.add("fa-pause");
           voices.forEach(voice => {
-            if (voice.dataset.start <= audioInstru.currentTime && audioInstru.currentTime <= voice.dataset.end) {
-              voice.currentTime = audioInstru.currentTime - voice.dataset.start;
-              voice.play();
-            }
-            if (voice.dataset.start >= audioInstru.currentTime) {
-              const id = setTimeout(() => {
+            if (voice.enabled) {
+              const test = document.querySelector(`#voice${voice.dataset.voiceid}`);
+              if (voice.dataset.start <= audioInstru.currentTime && audioInstru.currentTime <= voice.dataset.end) {
+                voice.currentTime = audioInstru.currentTime - voice.dataset.start;
                 voice.play();
-              }, ((voice.dataset.start - audioInstru.currentTime) * 1000) - 500);
-              arrayId.push(id);
+                const voiceId = setTimeout(() => {
+                  test.classList.add("voice-disable");
+                  test.classList.remove("voice-active");
+                }, (voice.dataset.end - voice.currentTime) * 1000);
+                arrayId.push(voiceId);
+              }
+              if (voice.dataset.start >= audioInstru.currentTime) {
+                const id = setTimeout(() => {
+                  voice.play();
+                  test.classList.remove("voice-disable");
+                  test.classList.add("voice-active");
+                  const voiceId = setTimeout(() => {
+                    test.classList.add("voice-disable");
+                    test.classList.remove("voice-active");
+                  }, (voice.dataset.end - voice.dataset.start) * 1000);
+                  arrayId.push(voiceId);
+                }, (voice.dataset.start - audioInstru.currentTime) * 1000);
+                arrayId.push(id);
+              }
             }
           })
         }
       });
       stop_wave.addEventListener("click", (event) => {
         const playIcon = document.querySelector("#play-icon");
-        event.currentTarget.dataset.playing = "true";
+        event.currentTarget.dataset.playing = "false";
         wave_surfer.stop();
         playIcon.classList.remove("fa-pause");
         playIcon.classList.add("fa-play");
         voices.forEach(voice => {
+          const test = document.querySelector(`#voice${voice.dataset.voiceid}`);
           voice.pause();
           voice.currentTime = 0;
+          test.classList.add("voice-disable");
+          test.classList.remove("voice-active");
         })
         arrayId.forEach(clearTimeout);
         arrayId = [];
