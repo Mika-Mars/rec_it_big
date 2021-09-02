@@ -50,7 +50,8 @@ const initWavesurfer = () => {
           playIcon.classList.remove("fa-play");
           playIcon.classList.add("fa-pause");
           voices.forEach(voice => {
-            if (voice.enabled) {
+            console.log(voice.dataset.enabled);
+            if (voice.dataset.enabled) {
               const test = document.querySelector(`#voice${voice.dataset.voiceid}`);
               if (voice.dataset.start <= audioInstru.currentTime && audioInstru.currentTime <= voice.dataset.end) {
                 voice.currentTime = audioInstru.currentTime - voice.dataset.start;
