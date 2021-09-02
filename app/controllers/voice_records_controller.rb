@@ -7,7 +7,8 @@ class VoiceRecordsController < ApplicationController
     @voice_record = VoiceRecord.new(voice_record_params)
     @project = Project.find(params[:project_id])
     @voice_record.project = @project
-    @voice_record.save!
+    @voice_record.save
+    redirect_to projects_path
   end
 
   def destroy

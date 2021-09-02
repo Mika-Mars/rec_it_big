@@ -226,17 +226,18 @@ $wave_width: 75px;
 
     p {
       margin-bottom: 0;
-      color: white;
     }
   }
 }
 
 .voice-disable {
+  color: white;
   background-color: purple;
 }
 
 .voice-active {
-  background-color: green;
+  color: black;
+  background-color: whitesmoke;
 }
 
 // #form-submit-instru {

@@ -15,21 +15,20 @@ const getAudio = () => {
       waveColor: 'white',
       interact: false,
       hideScrollbar: true,
-      normalize: true,
       cursorWidth: 0,
-      barWidth: 2,
-      barHeight: 0,
-      barGap: 1,
+      barWidth: 6,
+      barHeight: 1,
+      barGap: 5,
       plugins: [
         MicrophonePlugin.create()
       ],
     });
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
       navigator.mediaDevices.getUserMedia(constraints)
-      .then((stream) => {
-        const instruCurrentTime = document.querySelector('#waveform audio');
-        const mediaRecorder = new MediaRecorder(stream);
-        recButton.addEventListener('click', () => {
+        .then((stream) => {
+          const instruCurrentTime = document.querySelector('#waveform audio');
+          const mediaRecorder = new MediaRecorder(stream);
+          recButton.addEventListener('click', () => {
             if (mediaRecorder.state === "inactive") {
               mediaRecorder.start();
               console.log(mediaRecorder.state);
