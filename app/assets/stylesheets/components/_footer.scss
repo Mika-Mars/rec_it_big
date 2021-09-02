@@ -36,12 +36,11 @@
   margin-top: 5px;
 }
 #waveform-micro {
-  position: absolute ;
   width: 50px;
   height: 10px;
-  bottom: 130px;
-  right: 5px;
   font-size: 150px;
+  position: absolute;
+  top: -100px;
 }
 
 .fa-record-vinyl.fa-record-vinyl-playing {
@@ -66,10 +65,17 @@
 
 .pj-add {
   color: rgba(138, 34, 120, 0.9) !important;
-  font-size: 50px;
+  font-size: 45px;
   opacity: 0.92;
 }
 
 .btn {
   padding: 0;
+}
+.foot-item{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
 }
