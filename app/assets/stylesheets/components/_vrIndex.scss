@@ -41,6 +41,9 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  width: 60%;
+  height: 70%;
+  padding-top: 12px;
 }
 .vr-title h4{
   margin: 0;
@@ -53,3 +56,30 @@
   border-width: 1px;
   background-color: rgb(202, 202, 202);
 }
+.vr-switch{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 40%;
+  height: 100%;
+  position: relative;
+}
+.delete_vr{
+  width: 100%;
+  height: 15%;
+  position: relative;
+}
+.delete_vr i.fas.fa-trash-alt{
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  color: white;
+  font-size: 12px;
+  text-shadow: none;
+}
+.switch-container{
+height: 45px;
+padding-right: 25px;
+}
+

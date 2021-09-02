@@ -55,6 +55,9 @@
           <p><%= vr.starting_time %></p>
         </div>
         <div class="vr-switch">
+          <%= link_to project_voice_record_path(vr.id), class: "delete_vr", method: :delete, data: { confirm: "Are you sure you want to remove #{@voice_record.title}"} do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
           <div class="switch-container">
             <label for="switch" class="switch-label">
 
@@ -64,6 +67,7 @@
               </div>
             </label>
           </div>
+        
         </div>
       </div>
     <% end %>

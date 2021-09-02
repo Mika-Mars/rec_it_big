@@ -20,8 +20,9 @@ class VoiceRecordsController < ApplicationController
   end
 
   def destroy
+    @voice_record = VoiceRecord.find(params[:project_id])
     @voice_record.destroy
-    redirect_to projects_path, notice: "Voice record was successfully delete"
+    redirect_to project_path, notice: "Voice record was successfully delete"
   end
 
   private

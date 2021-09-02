@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show, :edit, :destroy]
+  before_action :set_project, only: [:show, :edit, :update, :destroy]
   skip_before_action :verify_authenticity_token
   def show
     @voice_record = VoiceRecord.new
@@ -28,7 +28,6 @@ class ProjectsController < ApplicationController
   end
 
   def update
-    @project = Project.find(params[:id])
     if params[:next_action]
       next_path = params[:next_action]
     else 
