@@ -14,7 +14,6 @@ const initWavesurfer = () => {
         waveColor: '#B06D9B',
         vertical: true,
         minCanvasWidth: 220,
-        hideScrollbar: true,
         barWidth: 3,
         barHeight: 1,
         barGap: 1,
@@ -102,6 +101,25 @@ const initWavesurfer = () => {
         arrayId.forEach(clearTimeout);
         arrayId = [];
       });
+      wave_surfer.on('ready', updateTimer)
+      wave_surfer.on('audioprocess', updateTimer)
+      wave_surfer.on('seek', updateTimer)
+
+      function updateTimer() {
+        let formattedTime = secondsToTimestamp(wave_surfer.getCurrentTime());
+        $('#waveform-time-indicator .wave-time').text(formattedTime);
+      }
+
+      function secondsToTimestamp(seconds) {
+        seconds = Math.floor(seconds);
+        let h = Math.floor(seconds / 3600);
+        let m = Math.floor((seconds - (h * 3600)) / 60);
+        let s = seconds - (h * 3600) - (m * 60);
+        h = h < 10 ? '0' + h : h;
+        m = m < 10 ? '0' + m : m;
+        s = s < 10 ? '0' + s : s;
+        return m + ':' + s;
+      }
     }
   }
 }

@@ -20,6 +20,9 @@
               <%= f.input :song, as: :file, input_html: {id:"instru", class:"up-instru"}, label:"..", label_html: {id:"label-inst"} %>
           <% end %>
         <%end%>
+        <div id="waveform-time-indicator">
+          <span class="wave-time">00:00</span>
+        </div>
         <div id="waveform" data-instru="<%= instru %>">
         </div>
         <div class="lecture">
@@ -30,6 +33,7 @@
             <i class="fas fa-stop"></i>
           </button>
         </div>
+        
       </div>
     </div>
     <div class="voice-record">
