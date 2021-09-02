@@ -8,6 +8,7 @@
 require 'faker'
 Note.destroy_all
 Project.destroy_all
+VoiceRecord.destroy_all
 User.destroy_all
 u1 = User.create(email: 'lildev@gmail.com', password: "123456")
 u1.save!

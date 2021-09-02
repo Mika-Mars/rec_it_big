@@ -37,7 +37,7 @@
         <% @project.voice_records.each_with_index do |vr, i| %>
           <% vrc = cloudinary_url(vr.voice.key, :resource_type=>"video") %>
           <%= audio_tag vrc, data: { enabled: vr.enabled, start: vr.starting_time, voiceid: vr.id, end: vr.ending_time }, class: "voices" %>
-          <div id="voice<%= vr.id %>" class="voice-disable">
+          <div id="voice<%= vr.id %>" class="voice-inactive">
             <p><%= i + 1 %></p>
           </div>
         <%end%>
