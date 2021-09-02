@@ -45,7 +45,7 @@
   flex-direction: column;
   justify-content: space-around;
   height: 100%;
-  
+
 }
 .delete_edit{
   display: flex;
@@ -59,8 +59,8 @@
 
 .pj-list i::before{
   color: white;
-  font-size: 12px;
-  text-shadow: .5px .5px 1px rgba(255, 255, 255, 0.5);
+  font-size: 15px;
+  text-shadow: .5px 1px 2px rgba(255, 255, 255, 0.5);
 }
 
 .pj-card-title {
@@ -88,11 +88,16 @@
 
 #backtohome {
   color: white;
-  text-shadow: 0px 1px 4px white;
-  font-size: 30px;
+  text-shadow: 0px 1px 2px white;
+  font-size: 15px;
   margin: 16px 0 12px 16px;
 }
-
+#bigbacktohome {
+  color: white;
+  text-shadow: 0px 1px 4px white;
+  font-size: 24px;
+  margin: 16px 0 12px 16px;
+}
 
 i.fas.fa-plus-circle{
   color: rgb(211, 211, 211);
@@ -157,8 +162,8 @@ background: linear-gradient(150deg, rgba(44, 44, 44, .8) 0%, rgba(46, 46, 46, .7
 .edit_go-back{
   position: absolute;
   margin: 0;
-  top: 0px;
-  left: 17px;
+  top: 5px;
+  left: 8px;
 }
 .edit_go-back i#backtohome.fas.fa-arrow-left{
   margin: 0;

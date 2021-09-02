@@ -1,4 +1,6 @@
 class VoiceRecordsController < ApplicationController
+  before_action :set_voice_record, only: [:update]
+
   def index
     @voice_records = VoiceRecord.all
   end
@@ -9,6 +11,12 @@ class VoiceRecordsController < ApplicationController
     @voice_record.project = @project
     @voice_record.save
     redirect_to projects_path
+  end
+
+  def update
+    @voice_record.enabled = !@voice_record.enabled
+    @voice_record.save
+    @project = Project.find(params[:project_id])
   end
 
   def destroy
@@ -23,6 +31,6 @@ class VoiceRecordsController < ApplicationController
   end
 
   def voice_record_params
-    params.require(:voice_record).permit(:title, :starting_time, :ending_time, :project_id, :voice)
+    params.require(:voice_record).permit(:title, :starting_time, :ending_time, :project_id, :voice, :enabled)
   end
 end

@@ -1,9 +1,9 @@
 const addNewSong = () => {
   const button = document.querySelector('#footeraddbtn');
-  const formContaineur = document.querySelector('.modalsong');
-  if (button) {
+  const formContainer = document.querySelector('.modalsong');
+  if (button && formContainer) {
     button.addEventListener('click', () => {
-      formContaineur.classList.toggle("hidden");
+      formContainer.classList.toggle("hidden");
     });
   }
 }

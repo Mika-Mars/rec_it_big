@@ -1,14 +1,16 @@
-.project_container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
-  width: 100%;
-  margin: 0;
-  background: linear-gradient(150deg, rgba(44, 44, 44, 1) 0%, rgb(46, 46, 46) 35%, rgba(59, 14, 52, 0.801) 100%);
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
+.project_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    background: linear-gradient(150deg, rgba(44, 44, 44, 1) 0%, rgb(46, 46, 46) 35%, rgba(59, 14, 52, 0.801) 100%);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+    position: relative;
 }
 
 .title-box h2 {
@@ -111,40 +113,40 @@ $wave_width: 75px;
   border-radius: 8px;
   margin: 0;
 }
-
 .test {
   background-color: black;
 }
 
-.wavebody {
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: center;
-  width: 100%;
-  box-shadow: 0 1px 4px rgba(138, 34, 120, 0.3);
-  height: 100%;
-  border-radius: 40px;
-  border: 1px solid rgba(138, 34, 120, 0.5);
-  background-color: rgba(19, 19, 19, 0.4);
+.wavebody{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    width: 100%;
+    box-shadow: 0 1px 4px rgba(138, 34, 120, 0.3);
+    height: 100%;
+    position: relative;
+    border-radius: 40px;
+    border: 1px solid rgba(138, 34, 120, 0.5);
+    background-color: rgba(19, 19, 19, 0.4);
 }
 
-.lecture {
-  width: 100%;
-  position: relative;
-  margin-top: -12px;
+.lecture{
+    width: 100%;
+    position: relative;
+    margin-top: -12px;
 }
 
-.wave_btn {
-  border: 0;
-  height: $wave_width;
-  width: $wave_width;
+.wave_btn{
+border: 0;
+height: $wave_width;
+width: $wave_width;
 }
 
-.wave_stop {
-  border: 0;
-  height: 25px;
-  width: 25px;
-  z-index: 5;
+.wave_stop{
+    border: 0;
+    height: 25px;
+    width: 25px;
+    z-index: 5;
 }
 
 .lecture input {
@@ -162,7 +164,6 @@ $wave_width: 75px;
   border: 0;
   box-shadow: 0 0 10px rgb(77, 77, 77);
 }
-
 .lecture .btn_stop {
   border-radius: 50%;
   height: 35px;
@@ -178,11 +179,9 @@ $wave_width: 75px;
 .form-group {
   margin-bottom: 4px;
 }
-
 .new_note {
   height: 85%;
 }
-
 #notes:focus {
   box-shadow: 0 0px 10px rgba(138, 34, 120, 0.5);
   border-color: rgba(138, 34, 120, 0.5);
@@ -193,16 +192,21 @@ $wave_width: 75px;
 }
 
 #label-inst {
-  color: rgba(0, 0, 0, 0.4);
-  // border: 1px solid rgba(138, 34, 120, 0.5);
-  padding: 45px 49px 380px 15px;
-  border-radius: 0 0 30px 30px;
-  background-color: rgba(0, 0, 0, 0.4);
-  // background-image: linear-gradient(to right, #a5a5a5 0%, #ffffff 31%, #ffffff 71%, #a5a5a5 100%);
-  font-weight: 700;
-  text-align: center;
-  margin-left: 0px;
-  margin-bottom: -33px;
+    color: rgba(0, 0, 0, 0.4);
+    height: 92.8%;
+    padding: 45px 49px 380px 15px;
+    border-radius: 0 0 40px 40px;
+    background-color: rgba(0, 0, 0, 0.4);
+    font-weight: 700;
+    text-align: center;
+    margin-left: 0px;
+    margin-bottom: -33px;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .voice-record {
@@ -240,12 +244,10 @@ $wave_width: 75px;
   background-color: whitesmoke;
 }
 
-// #form-submit-instru {
-//     color: black;
-//     border: 1px solid rgba(138, 34, 120, 0.5);
-//     padding: 6px;
-//     border-radius: 0 0 30px 30px;
-//     background-image: linear-gradient(to right, #a5a5a5 0%, #ffffff 31%, #ffffff 71%, #a5a5a5 100%);
-//     font-weight: 700;
-//     text-align: center;
-// }
+i.fas.fa-cloud-upload-alt::before{
+  color: rgba(255, 255, 255, .5);
+  font-size: 30px;
+  position: absolute;
+  top: 45%;
+  left: 17px;
+}

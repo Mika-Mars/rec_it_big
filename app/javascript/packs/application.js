@@ -31,6 +31,8 @@ import { initWavesurfer } from '../components/wavesurfer';
 import { getAudio } from '../components/get_audio';
 import { editProject } from "../components/edit_project";
 import { initNoteAutoSave } from '../components/note';
+import { togglevr } from "../components/switchbtn";
+import { toggleVrIndex } from "../components/toggle_vr_index";
 import { submitAutoInstru } from '../components/submit_auto_instru';
 
 document.addEventListener('turbolinks:load', () => {
@@ -40,5 +42,7 @@ document.addEventListener('turbolinks:load', () => {
   addNewProject();
   editProject();
   initNoteAutoSave();
+  togglevr();
+  toggleVrIndex();
   submitAutoInstru();
 });
