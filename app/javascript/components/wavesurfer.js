@@ -100,7 +100,13 @@ const initWavesurfer = () => {
         })
         arrayId.forEach(clearTimeout);
         arrayId = [];
+        const e = document.getElementById("waveform");
+        const eScroll = e.children[0];
+        eScroll.scrollTop = 0;
       });
+
+
+
       wave_surfer.on('ready', updateTimer)
       wave_surfer.on('audioprocess', updateTimer)
       wave_surfer.on('seek', updateTimer)
