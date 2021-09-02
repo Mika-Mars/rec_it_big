@@ -4,7 +4,7 @@ const initWavesurfer = () => {
   const container = document.querySelector("#waveform");
   if (container) {
     if (container.dataset.instru) {
-      const play_wave = document.querySelector("#btn_play");
+      const play_wave = document.querySelector("#btn-play");
       const stop_wave = document.querySelector("#btn_stop");
       const voices = document.querySelectorAll(".voices");
       let arrayId = [];
@@ -81,7 +81,8 @@ const initWavesurfer = () => {
       });
       stop_wave.addEventListener("click", (event) => {
         const playIcon = document.querySelector("#play-icon");
-        event.currentTarget.dataset.playing = "false";
+        const playBtn = document.querySelector("#btn-play");
+        playBtn.dataset.playing = "false";
         wave_surfer.stop();
         playIcon.classList.remove("fa-pause");
         playIcon.classList.add("fa-play");
