@@ -62,7 +62,7 @@ const initWavesurfer = () => {
       });
       stop_wave.addEventListener("click", (event) => {
         const playIcon = document.querySelector("#play-icon");
-        event.currentTarget.dataset.playing = "true";
+        event.currentTarget.dataset.playing = "false";
         wave_surfer.stop();
         playIcon.classList.remove("fa-pause");
         playIcon.classList.add("fa-play");
