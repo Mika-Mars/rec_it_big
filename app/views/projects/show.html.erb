@@ -44,7 +44,7 @@
     </div>
   </div>
   <div id="voice-records-index" class="vr-index">
-    <% @voicerecords.order(created_at: :asc).each do |vri| %>
+    <% @voicerecords.order(created_at: :desc).each do |vri| %>
       <%= render 'voice_records/voice_record_index', voice_record_index: vri %>
     <% end %>
   </div>
