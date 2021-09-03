@@ -10,19 +10,25 @@ class VoiceRecordsController < ApplicationController
     @project = Project.find(params[:project_id])
     @voice_record.project = @project
     @voice_record.save
-    redirect_to projects_path
+    respond_to do |format|
+      format.html { redirect_to projects_path }
+      format.text { render partial: 'voice_records/voice_record', locals: { voice_record: @voice_record }, formats: [:html] }
+    end
   end
 
   def update
     @voice_record.enabled = !@voice_record.enabled
     @voice_record.save
     @project = Project.find(params[:project_id])
+    # respond_to do |format|
+    #   format.text { render partial: 'voice_records/voice_record_index', locals: { voice_record: @voice_record }, formats: [:html] }
+    # end
   end
 
   def destroy
     @voice_record = VoiceRecord.find(params[:project_id])
     @voice_record.destroy
-    redirect_to project_path, notice: "Voice record was successfully delete"
+    redirect_to project_path
   end
 
   private

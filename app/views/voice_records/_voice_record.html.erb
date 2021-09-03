@@ -1,0 +1,7 @@
+<%if voice_record.id  %>
+  <% vrc = cloudinary_url(voice_record.voice.key, :resource_type=>"video") %>
+  <%= audio_tag vrc, data: { enabled: voice_record.enabled, start: voice_record.starting_time, voiceid: voice_record.id, end: voice_record.ending_time }, class: "voices" %>
+  <div id="voice<%= voice_record.id %>" class="voice-inactive">
+    <p><%= voice_record.rank %></p>
+  </div>
+<% end %>

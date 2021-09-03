@@ -50,18 +50,22 @@ const getAudio = () => {
             chunks = [];
             const formData = new FormData();
             formData.append('voice_record[voice]', blob);
-            formData.append('voice_record[title]', "a changer");
+            formData.append('voice_record[title]', "Je suis un voice record");
             formData.append('voice_record[starting_time]', startTime);
             formData.append('voice_record[ending_time]', endTime);
             formData.append('authenticity_token', recButton.dataset.token);
             fetch(window.location.href + "/voice_records", {
               method: 'POST',
-              body: formData
-            });
+              headers: {Accept: 'text/plain'},
+              body: formData,
+            })
+            .then((r) => r.text())
+            .then((t) => {
+              console.log(t);
+              const vrList = document.querySelector("#voice-records-list")
+              vrList.insertAdjacentHTML('beforeend', t)
+            })
           }
-        })
-        .catch((err) => {
-          console.log("error" + err);
         })
     } else {
       console.log('getUserMedia not supported on your browser!');

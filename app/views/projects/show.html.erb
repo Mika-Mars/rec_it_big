@@ -16,8 +16,8 @@
           <% instru = cloudinary_url(@project.song.key, :resource_type=>"video") %>
         <% else %>
           <%= simple_form_for @project, html: {id: :'form-submit-instru'}, remote: true do |f| %>
-          <i class="fas fa-cloud-upload-alt"></i>
-              <%= f.input :song, as: :file, input_html: {id:"instru", class:"up-instru"}, label:"..", label_html: {id:"label-inst"} %>
+            <i class="fas fa-cloud-upload-alt"></i>
+            <%= f.input :song, as: :file, input_html: {id:"instru", class:"up-instru"}, label:"..", label_html: {id:"label-inst"} %>
           <% end %>
         <%end%>
         <div id="waveform-time-indicator">
@@ -36,14 +36,10 @@
         
       </div>
     </div>
-    <div class="voice-record">
+    <div id="voice-records-list" class="voice-record">
       <% if @project.voice_records.first %>
-        <% @project.voice_records.each_with_index do |vr, i| %>
-          <% vrc = cloudinary_url(vr.voice.key, :resource_type=>"video") %>
-          <%= audio_tag vrc, data: { enabled: vr.enabled, start: vr.starting_time, voiceid: vr.id, end: vr.ending_time }, class: "voices" %>
-          <div id="voice<%= vr.id %>" class="voice-inactive">
-            <p><%= i + 1 %></p>
-          </div>
+        <% @project.voice_records.order(created_at: :asc).each do |vr| %>
+          <%= render 'voice_records/voice_record', voice_record: vr %>
         <%end%>
       <%end%>
     </div>
@@ -51,29 +47,9 @@
       <textarea class="form-control text optional" id="notes" rows="24" cols="33" data-token="<%= form_authenticity_token %>" ><%= @project.note.content.strip %></textarea>
     </div>
   </div>
-  <div class="vr-index">
-    <% @voicerecords.order(created_at: :desc).each do |vr| %>
-      <div class="vr-card">
-        <div class="vr-title">
-          <h4><%= vr.title %></h4>
-          <p><%= vr.starting_time %></p>
-        </div>
-        <div class="vr-switch">
-          <%= link_to project_voice_record_path(vr.id), class: "delete_vr", method: :delete, data: { confirm: "Are you sure you want to remove #{@voice_record.title}"} do %>
-            <i class="fas fa-trash-alt"></i>
-          <% end %>
-          <div class="switch-container">
-            <label for="switch" class="switch-label">
-
-              <div data-voiceid="<%= vr.id %>" data-voicetoken="<%= form_authenticity_token %>" class="switch-rail" style="background-color: <%= vr.enabled ? "purple" : "black" %>">
-                <div class="switch-slider <%= vr.enabled ? "" : "slide" %>">
-                </div>
-              </div>
-            </label>
-          </div>
-        
-        </div>
-      </div>
+  <div id="voice-records-index" class="vr-index">
+    <% @voicerecords.order(created_at: :asc).each do |vri| %>
+      <%= render 'voice_records/voice_record_index', voice_record_index: vri %>
     <% end %>
   </div>
   <%= render 'shared/footer' unless @disable_nav %>

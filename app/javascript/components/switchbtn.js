@@ -12,8 +12,13 @@ const togglevr = () => {
         formData.append('authenticity_token', switchrail.dataset.voicetoken);
         fetch(window.location.href + "/voice_records/" + switchrail.dataset.voiceid, {
           method: 'PATCH',
+          headers: {Accept: 'text/plain'},
           body: formData
-        });
+        })
+        .then((r) => r.text())
+        .then((t) => {
+
+        })
       })
     });
   }

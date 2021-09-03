@@ -6,7 +6,6 @@ const initWavesurfer = () => {
     if (container.dataset.instru) {
       const play_wave = document.querySelector("#btn-play");
       const stop_wave = document.querySelector("#btn_stop");
-      const voices = document.querySelectorAll(".voices");
       let arrayId = [];
 
       const wave_surfer = WaveSurfer.create({
@@ -24,7 +23,8 @@ const initWavesurfer = () => {
         scrollParent: true,
       });
       wave_surfer.load(container.dataset.instru);
-      voices.forEach(voice => {
+      const voicesToEnable = document.querySelectorAll(".voices");
+      voicesToEnable.forEach(voice => {
         const test = document.querySelector(`#voice${voice.dataset.voiceid}`);
         if (voice.dataset.enabled === "false") {
           test.classList.add("voice-disable");
@@ -33,6 +33,7 @@ const initWavesurfer = () => {
         }
       })
       play_wave.addEventListener("click", (event) => {
+        const voices = document.querySelectorAll(".voices");
         const isPlaying = event.currentTarget.dataset.playing === "true";
         const playIcon = document.querySelector("#play-icon")
         const audioInstru = document.querySelector('#waveform audio');
@@ -64,7 +65,7 @@ const initWavesurfer = () => {
                 const voiceId = setTimeout(() => {
                   test.classList.add("voice-inactive");
                   test.classList.remove("voice-active");
-                }, (voice.dataset.end - voice.currentTime) * 1000);
+                }, (voice.dataset.end - audioInstru.currentTime) * 1000);
                 arrayId.push(voiceId);
               }
               if (voice.dataset.start >= audioInstru.currentTime) {
@@ -91,7 +92,7 @@ const initWavesurfer = () => {
         wave_surfer.stop();
         playIcon.classList.remove("fa-pause");
         playIcon.classList.add("fa-play");
-        voices.forEach(voice => {
+        voicesToEnable.forEach(voice => {
           const test = document.querySelector(`#voice${voice.dataset.voiceid}`);
           voice.pause();
           voice.currentTime = 0;

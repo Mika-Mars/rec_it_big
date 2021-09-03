@@ -1,0 +1,19 @@
+<div class="vr-card">
+  <div class="vr-title">
+    <h4>REC <%= voice_record_index.rank %></h4>
+    <p><%= voice_record_index.starting_time %></p>
+  </div>
+  <div class="vr-switch">
+    <%= link_to project_voice_record_path(voice_record_index.id), class: "delete_vr", method: :delete, remote: true, data: { confirm: "Are you sure you want to remove #{@voice_record.title}"} do %>
+      <i class="fas fa-trash-alt"></i>
+    <% end %>
+    <div class="switch-container">
+      <label for="switch" class="switch-label">
+        <div data-voiceid="<%= voice_record_index.id %>" data-voicetoken="<%= form_authenticity_token %>" class="switch-rail" style="background-color: <%= voice_record_index.enabled ? "purple" : "black" %>">
+          <div class="switch-slider <%= voice_record_index.enabled ? "" : "slide" %>">
+          </div>
+        </div>
+      </label>
+    </div>
+  </div>
+</div>
