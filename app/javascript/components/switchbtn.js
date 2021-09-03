@@ -2,7 +2,13 @@ const togglevr = () => {
   const switchrails = document.querySelectorAll('.switch-rail');
   if (switchrails.length > 0) {
     switchrails.forEach((switchrail) => {
-      switchrail.addEventListener('click', (event) => {
+      handleClickVoiceRecordEnability(switchrail);
+    });
+  }
+};
+
+const handleClickVoiceRecordEnability = (element) => {
+  element.addEventListener('click', (event) => {
         const switchcard = event.currentTarget;
         const switchbtns = switchcard.querySelector('.switch-slider');
         let color = switchcard.style.backgroundColor;
@@ -10,9 +16,9 @@ const togglevr = () => {
           color === 'black' ? 'purple' : 'black';
         switchbtns.classList.toggle('slide');
         const formData = new FormData();
-        formData.append('authenticity_token', switchrail.dataset.voicetoken);
+        formData.append('authenticity_token', element.dataset.voicetoken);
         fetch(
-          window.location.href + '/voice_records/' + switchrail.dataset.voiceid,
+          window.location.href + '/voice_records/' + element.dataset.voiceid,
           {
             method: 'PATCH',
             headers: { Accept: 'application/json' },
@@ -23,7 +29,7 @@ const togglevr = () => {
           .then((data) => {
             const vrId = data.voiceRecordId;
             const audioDiv = document.querySelector(
-              `audio[data-voiceid="${vrId}"]`
+    `audio[data-voiceid="${vrId}"]`
             );
             const vrDiv = document.querySelector(`#voice${vrId}`);
             audioDiv.dataset.enabled = data.enabled;
@@ -34,8 +40,6 @@ const togglevr = () => {
             }
           });
       });
-    });
-  }
-};
+}
 
-export { togglevr };
+export { togglevr, handleClickVoiceRecordEnability };
