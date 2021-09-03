@@ -20,15 +20,15 @@ class VoiceRecordsController < ApplicationController
     @voice_record.enabled = !@voice_record.enabled
     @voice_record.save
     @project = Project.find(params[:project_id])
-    # respond_to do |format|
-    #   format.text { render partial: 'voice_records/voice_record_index', locals: { voice_record: @voice_record }, formats: [:html] }
-    # end
+    respond_to do |format|
+      format.json
+    end
   end
 
   def destroy
-    @voice_record = VoiceRecord.find(params[:project_id])
+    @voice_record = VoiceRecord.find(params[:id])
     @voice_record.destroy
-    redirect_to project_path
+    redirect_to @voice_record.project
   end
 
   private
