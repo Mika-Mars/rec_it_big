@@ -4,7 +4,7 @@ const toggleVrIndex = () => {
   if (indexbtn) {
     indexbtn.addEventListener('click', (event) => {
       if (getComputedStyle(index).right === "-350px") {
-        index.style.right = "10px";
+        index.style.right = "6px";
       } else {
         index.style.right = "-350px";
       }
