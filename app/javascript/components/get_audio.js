@@ -1,5 +1,6 @@
 import WaveSurfer from 'wavesurfer.js';
 import MicrophonePlugin from '../plugins/microphone';
+import { handleClickVoiceRecordEnability } from './switchbtn';
 
 const getAudio = () => {
   const recButton = document.querySelector('#footer-btn-instru');
@@ -61,9 +62,11 @@ const getAudio = () => {
             .then((r) => r.json())
             .then((data) => {
               const vrList = document.querySelector('#voice-records-list');
-              vrList.insertAdjacentHTML('beforeend', data.playingDiv);
+              vrList.insertAdjacentHTML('afterbegin', data.playingDiv);
               const vrIndex = document.querySelector('#voice-records-index');
               vrIndex.insertAdjacentHTML('beforeend', data.enabilityDiv);
+              const newVr = vrIndex.lastElementChild.querySelector(".switch-rail")
+              handleClickVoiceRecordEnability(newVr);
             });
         };
       });
