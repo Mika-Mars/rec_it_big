@@ -262,7 +262,9 @@ width: $wave_width;
   }
 
 .voice-disable {
-  opacity: 0.4;
+  color: white;
+  background-color: grey;
+  opacity: 0.5;
 }
 
 i.fas.fa-cloud-upload-alt::before{
