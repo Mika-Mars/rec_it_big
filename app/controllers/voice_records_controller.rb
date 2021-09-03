@@ -12,7 +12,7 @@ class VoiceRecordsController < ApplicationController
     @voice_record.save
     respond_to do |format|
       format.html { redirect_to projects_path }
-      format.text { render partial: 'voice_records/voice_record', locals: { voice_record: @voice_record }, formats: [:html] }
+      format.json
     end
   end
 
